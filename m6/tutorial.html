@@ -62,25 +62,29 @@
     }
 
 
-    function primos(){
-        
-        for (let i = 0; i <= 100; i++){
-            if (i %i == 1){
-                document.write("es primo <br>")
-            }else{
-                document.write("no es primo <br>")
-            }
-
-
-
-        }
-
-
-
+function esPrimo(n) {
+  for (i = 2; i <n; i++){
+    if(n % i == 0){
+        return false    
     }
-  
-    primos()      
+
     
+  }
+  return true
+}
+function impprimos(max){
+    for (num = 1; num <= max; num++){
+        if (esPrimo(num)){
+            document.write(num + "<br>")
+        }
+    }
+
+
+
+}
+
+impprimos(100)
+
            
 
 
