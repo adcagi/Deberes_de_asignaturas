@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    function fizzbuzz() {
+        for(i = 0; i<=100; i++){
+            if(i %3 == 0 && i %5 != 0){
+                document.write("fizz ")
+            }
+            if(i %5 == 0 && i %3 != 0){
+                document.write("buzz ")
+            }
+
+            if(i %5 == 0 && i %3 == 0){
+                document.write("fizzbuzz    ")
+            }
+
+            
+            document.write(i + "<br>")
+        }            
+
+  
+}
+
+    function anagrama(w1, w2){
+        
+
+        let arr1 = Array.from(w1)
+        let arr2= Array.from(w2)
+
+        arr1.sort()
+        arr2.sort()
+
+        for(i = 0; i <= arr1.length; i++){
+
+            for(j = 0; j <= arr2.length ; j++){
+                
+            }
+
+        }
+        if( i == j){
+                    document.write("esta bien <br>")
+                }
+
+    }
+
+
+
+    function fibo(){
+        let n = [0, 1]
+        
+        for (i = 2; i <= 50; i++ ){
+            n[i] = n[i - 2] + n[i - 1]
+            document.write(n[i] + "<br>")
+        }
+    }
+
+
+    function primos(){
+        
+        for (let i = 0; i <= 100; i++){
+            if (i %i == 1){
+                document.write("es primo <br>")
+            }else{
+                document.write("no es primo <br>")
+            }
+
+
+
+        }
+
+
+
+    }
+  
+    primos()      
+    
+           
+
+
+
+    </script>
+    
+</body>
+</html>
