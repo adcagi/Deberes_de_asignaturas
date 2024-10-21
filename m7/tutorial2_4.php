@@ -1,23 +1,20 @@
 <?php
 
-$a = rand(100,999);
+$a = rand(10000,99900);
 
-$b = rand(100,999);
+$b = rand(10000,99900);
 
 $stra = (string) $a;
 $strb = (string) $b;
 
-$array_a = explode(separator: '',  string: $stra);
-$array_b = explode(separator: '',  string: $strb);
+$array_a = str_split($stra);
+$array_b = str_split($strb);
 
+$conteoa = count($array_a) -1;
+$conteob = count($array_b) -1;
 
-echo $arrayt_a[0];
-echo $arrayt_b[0];
-
-
-if($array_a [2] == $array_b [2]){
-    echo "$a"."-"."$b"."---->"."Coinciden";
+if($array_a [$conteoa] == $array_b [$conteoa]) {
+    echo "$a"."-"."$b"."---->".True;
 }else{
-    echo "$a"."-". "$b"."---->"."No coinciden";
+    echo "$a"."-". "$b"."---->"."False";
 }
-
