@@ -15,9 +15,9 @@ echo $arrayt_a[0];
 echo $arrayt_b[0];
 
 
-/*if($array_a [2] == $array_b [2]){
-    echo "$a"."-"."$b"."---->$true";
+if($array_a [2] == $array_b [2]){
+    echo "$a"."-"."$b"."---->"."Coinciden";
 }else{
-    echo "$a"."-". "$b"."---->$false";
-}*/
+    echo "$a"."-". "$b"."---->"."No coinciden";
+}
 
