@@ -1,0 +1,26 @@
+.menu{
+    
+ }
+
+.landing_page_centro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+
+    background-image: url('../imagenes_web/fondo_landing_page.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.8);
+
+}
+
+.logo{
+    display: block;
+    width: 500px;
+    height: auto;
+}
+
