@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_REQUEST['tipo-apuesta'])&&isset($_REQUEST['apuesta'])&&isset($_REQUEST['dinero'])){
+if(isset($_REQUEST['tipo-apuesta'], $_REQUEST['apuesta'], $_REQUEST['dinero'])){
 	$numero=rand(1,36); //Genera numero aleatorio
 	echo '<h1>'.$numero.'</h1>'; //Muetra el numero generado
 
@@ -24,8 +24,18 @@ if(isset($_REQUEST['tipo-apuesta'])&&isset($_REQUEST['apuesta'])&&isset($_REQUES
 			break;
 		
 		case 'par-impar': //Completar. Entra 'par' o ' impar'
-		//	if( ... ) echo 'Has ganado'. xxxx;
-		//	else echo 'Has perdido '.$d;
+			if (strtoupper($a) == "PAR")
+			{if( $numero % 2 == 0) 
+				{echo 'Has ganado'. $d;}
+				else 
+				{echo 'Has perdido '. $d;}
+			}
+			if(strtoupper($a) == "IMPAR"){
+				if( $numero % 2 == 0) 
+				{echo 'Has perdido '. $d;}
+				else 
+				{echo 'Has ganado '. $d;}
+			}
 			break;
 
 		case 'falta-pasa': //Completar. Entra 'falta' o ' pasa' (Buscar número en intervalo 1-18 o 19-36)
