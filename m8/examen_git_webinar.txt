@@ -1,0 +1,58 @@
+¿Cuál es el propósito principal de Git Flow?
+
+Establecer un flujo de trabajo colaborativo para proyectos de desarrollo de software.
+¿Qué sucede con la historia del proyecto después de realizar un git rebase?
+
+La historia se mantiene lineal y limpia.
+¿Cuál es la forma más eficiente de reestructurar varios commits para una misma tarea?
+
+Combinar los commits de la tarea con un squash.
+¿Cuál de las siguientes metodologías es comúnmente utilizada para implementar un flujo de trabajo de ramificación Git exitoso?
+
+Git Flow.
+¿Qué comando se utiliza para eliminar un archivo del repositorio y del sistema de archivos en Git?
+
+git rm
+¿Qué conflictos pueden surgir al forzar un push tras un rebase?
+
+La rama remota podría ver su historia sobrescrita, lo que puede provocar conflictos con el histórico de otros compañeros.
+¿Cuál es el comando para agregar archivos al área de preparación en Git?
+
+git add
+¿Cuál es el comando para inicializar un repositorio Git en un directorio existente?
+
+git init
+¿Cuál es el comando para clonar un repositorio Git desde un servidor remoto?
+
+git clone
+¿Qué comando se utiliza para abortar un git rebase en caso de conflictos?
+
+git rebase --abort
+¿Qué comando se utiliza para deshacer un commit específico en Git sin eliminarlo?
+
+git revert ID_COMMIT
+¿De cuántas formas dispone Git para integrar los cambios de una rama en otra?
+
+Dos.
+¿Cómo podrías combinar varios commits juntos sin usar git merge --squash?
+
+Con rebase.
+¿Qué hace la secuencia de comandos git reset --hard HEAD~3 y git merge --squash HEAD@{1}?
+
+El HEAD de la rama actual se restablece a tres commits anteriores, luego los commits anteriores se comprimen en un solo commit.
+¿Qué tipo de rama se utiliza en Git Flow para corregir errores críticos en producción de forma rápida?
+
+Hotfix branches.
+¿Qué describe mejor git reset --hard?
+
+Deshace un commit y elimina todos los cambios locales.
+¿Cuál es el propósito principal de git merge?
+
+Fusionar cambios de una rama en otra.
+Después de fusionar dos ramas y confirmar los cambios, ¿cuál es el siguiente paso para mantener organizada la estructura de git?
+
+Ejecuta git branch -d <nombre de la rama> para borrar la rama fusionada.
+¿Qué comando muestra la diferencia entre el área de trabajo y el área de staging/índices, así como los archivos no rastreados por Git?
+
+git status
+Este resumen contiene las preguntas y las respuestas correctas.
