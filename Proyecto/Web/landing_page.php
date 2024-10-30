@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="landing_page.css">
 </head>
 <body>
-    <div class="menu">
+    <div class="menu"> <!-- Que no se vea hasta que no esté logueado-->
         <!-- Start nav -->
         <nav id="menu">
             <!-- Start menu -->
