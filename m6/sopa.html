@@ -99,11 +99,88 @@
                 document.write(diccionari[p][l] + " ")
             }
         }*/
-        for (let i = 0; i < sopa.length; i++){
-            for (let c = 0; c < sopa.length; c++){
-                document.write(sopa[i][c])
+       recorresopa();
+       function recorresopa(){
+    
+        for (let r = 0; r < sopa.length; r++){
+            for (let c = 0; c < sopa[r].length; c++){
+                for(let p = 0; p< diccionari.length; p++){
+                    cercaHoritzontal(r, c, diccionari[p])
+                    cercaVertical(r, c, diccionari[p])
+                    cercaDiagonalDalt(r, c, diccionari[p])
+                    cercaDiagonalBaix(r, c, diccionari[p])
+
+                }
             }
         }
+
+       }
+       
+        function cercaHoritzontal(r, c, paraula){
+            let count = 0;
+            for (l = 0; l < paraula.length; l++){
+                if(paraula[l] == sopa[r][c + l]){
+                    count++;
+                }else{
+                    break;
+                }
+                
+            }
+            if (count == paraula.length){
+                    console.log(paraula);
+                }
+
+        }
+
+        function cercaVertical(r, c, paraula){
+            let count = 0;
+            for (l = 0; l < paraula.length; l++){
+                if(sopa.length > r + l && paraula[l] == sopa[r + l][c]){
+                    count++;
+                }else{
+                    break;
+                }
+                
+            }
+            if (count == paraula.length){
+                    console.log(paraula);
+                }
+
+        }
+
+
+        function cercaDiagonalDalt(r, c, paraula){
+            let count = 0;
+            for (l = 0; l < paraula.length; l++){
+                if(sopa.length > r + l && paraula[l] == sopa[r + l][c + l]){
+                    count++;
+                }else{
+                    break;
+                }
+                
+            }
+            if (count == paraula.length){
+                    console.log(paraula);
+                }
+
+        }
+
+        function cercaDiagonalBaix(r, c, paraula){
+            let count = 0;
+            for (l = 0; l < paraula.length; l++){
+                if( r - l >= 0 && paraula[l] == sopa[r - l][c + l]){
+                    count++;
+                }else{
+                    break;
+                }
+                
+            }
+            if (count == paraula.length){
+                    console.log(paraula);
+                }
+
+        }
+        
         
     </script>
 
