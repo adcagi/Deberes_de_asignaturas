@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button onclick="pushea()">Pushea</button>
+        <button onclick="popea()">Popea</button>
+        <h1 id="showme">Hole</h1>
+ 
+    </div>
+    <script>
+        let last = {
+            value: 1,
+            before: null
+        }
+
+
+        function pushea(){
+            let value= prompt("pon un numero")
+            last.push(value)
+        }
+
+        function popea(){
+            last.pop()
+        }
+
+        function muestra(){
+            alert("holiwis")
+            let value= prompt("pon un numero")
+            let element = document.getElementById("showme")
+        }
+    </script>
+</body>
+</html>
