@@ -101,11 +101,38 @@ if(isset($_REQUEST['tipo-apuesta'], $_REQUEST['apuesta'], $_REQUEST['dinero'])){
 			break;
 
 		case 'rojo-negro': //Completar. Entra 'rojo' o ' negro' 
-			$N = array(2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35);
-			foreach ($N as $x) {
-				echo "$x ";
-			  }	//terminar
-			break;
+			if(strtoupper($a) == 'NEGRO'){
+				$N = array(2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35)			;
+				if (in_array($numero, $N))
+					{echo 'Has ganado '. $d;}
+				elseif ($numero == 0){
+						echo 'Has perdido '. $d/2;
+				}else{
+					echo 'Has perdido '.$d;
+				}	
+					
+				
+					//terminar
+				
+			}
+
+			if(strtoupper($a) == 'ROJO'){
+				$N = array(2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35);
+				if (in_array($numero, $N)){
+					echo 'Has perdido '. $d;
+				}elseif ($numero == 0){
+						echo 'Has perdido '. $d/2;
+						
+					}else{
+						echo 'Has ganado '. $d;
+					}
+					break;
+				
+					//terminar
+				
+
+			}
+			
 
 	}
 
