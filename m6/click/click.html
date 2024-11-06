@@ -9,30 +9,102 @@
     <div>
         <button onclick="pushea()">Pushea</button>
         <button onclick="popea()">Popea</button>
-        <h1 id="showme">Hole</h1>
+        <h1 id="stacklabel1">Stack</h1>
+        <button onclick="enqueue()">Encola</button>
+        <button onclick="dequeue()">Decola</button>
+        <h1 id="stacklabel2">Stack2</h1>
+        <div id="muestra"></div>
  
     </div>
     <script>
-        let last = {
-            value: 1,
-            before: null
+
+           
+        class Item{
+            value
+            next
+        }
+
+        class Pila{
+            constructor(){
+                this.top = null
+            }
+            
+            push(value){
+                let i = new Item()
+                i.value = value
+                i.next = this.top                
+                this.top = i
+            }
+
+            pop(){
+                let ret = this.top
+                this.top = this.next
+                return ret.value
+            }
+            toString(){
+                let str  =  " "
+                let aux = this.top
+                while(aux != null){
+                    str +=  aux.value + " "
+                    aux = aux.next
+                }
+                return str
+            }
+
+        }
+        class Cua{
+           enqueue(){
+
+            let i = new Item()
+            i.value 
+            i.next = null
+            if (!this.first) {
+                
+                this.first = i
+
+            } else{
+            this.last = i
+           }
+            this.last.next = i 
+            
+           }
         }
 
 
+        toString(){
+            let str = " "
+            let i = this.first
+            while(i){
+                str += i.value + ","
+                i = i.next
+            }
+        }
+        let p = new Pila()
+        let q = new Cua()
+
         function pushea(){
-            let value= prompt("pon un numero")
-            last.push(value)
+            let value = prompt("añade un valor: ")
+            p.push(value)
+            element= document.getElementById('stacklabel1')
+            element.innerHTML = p.toString()
         }
 
         function popea(){
-            last.pop()
+            let value = p.pop()
+            alert(value)
+            let element = document.getElementById('stacklabel1')
+            element = innerHTML = p.toString()
         }
 
-        function muestra(){
-            alert("holiwis")
-            let value= prompt("pon un numero")
-            let element = document.getElementById("showme")
+        function enqueue(){
+
         }
+        
+
+        
+
+
+
     </script>
 </body>
 </html>
