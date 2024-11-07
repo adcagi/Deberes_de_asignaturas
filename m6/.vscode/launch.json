@@ -7,8 +7,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open click.html",
-            "file": "c:\\Users\\Adrian\\Deberes_de_asignaturas\\m6\\click\\click.html"
+            "name": "Open simon.html",
+            "file": "c:\\Users\\Adrian\\Deberes_de_asignaturas\\m6\\simon\\simon.html"
         }
     ]
 }
