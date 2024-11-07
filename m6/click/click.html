@@ -11,99 +11,113 @@
         <button onclick="popea()">Popea</button>
         <h1 id="stacklabel1">Stack</h1>
         <button onclick="enqueue()">Encola</button>
-        <button onclick="dequeue()">Decola</button>
-        <h1 id="stacklabel2">Stack2</h1>
+        <button onclick="clickdequeue()">Decola</button>
+        <h1 id="stacklabel2">Queue</h1>
         <div id="muestra"></div>
- 
     </div>
     <script>
 
-           
-        class Item{
-            value
-            next
+        class Item {
+            constructor(value = null) {
+                this.value = value;
+                this.next = null;
+            }
         }
 
-        class Pila{
-            constructor(){
-                this.top = null
+        class Pila {
+            constructor() {
+                this.top = null;
             }
             
-            push(value){
-                let i = new Item()
-                i.value = value
-                i.next = this.top                
-                this.top = i
+            push(value) {
+                let i = new Item(value);
+                i.next = this.top;
+                this.top = i;
             }
 
-            pop(){
-                let ret = this.top
-                this.top = this.next
-                return ret.value
+            pop() {
+                if (!this.top) return null;
+                let ret = this.top;
+                this.top = this.top.next;
+                return ret.value;
             }
-            toString(){
-                let str  =  " "
-                let aux = this.top
-                while(aux != null){
-                    str +=  aux.value + " "
-                    aux = aux.next
+
+            toString() {
+                let str = "";
+                let aux = this.top;
+                while (aux != null) {
+                    str += aux.value + " ";
+                    aux = aux.next;
                 }
-                return str
-            }
-
-        }
-        class Cua{
-           enqueue(){
-
-            let i = new Item()
-            i.value 
-            i.next = null
-            if (!this.first) {
-                
-                this.first = i
-
-            } else{
-            this.last = i
-           }
-            this.last.next = i 
-            
-           }
-        }
-
-
-        toString(){
-            let str = " "
-            let i = this.first
-            while(i){
-                str += i.value + ","
-                i = i.next
+                return str.trim();
             }
         }
-        let p = new Pila()
-        let q = new Cua()
 
-        function pushea(){
-            let value = prompt("añade un valor: ")
-            p.push(value)
-            element= document.getElementById('stacklabel1')
-            element.innerHTML = p.toString()
+        class Cua {
+            constructor() {
+                this.first = null;
+                this.last = null;
+            }
+
+            enqueue(value) {
+                let i = new Item(value);
+                if (!this.first) {
+                    this.first = i;
+                } else {
+                    this.last.next = i;
+                }
+                this.last = i;
+            }
+
+            dequeue() {
+                if (!this.first) return null;
+                let i = this.first;
+                this.first = this.first.next;
+                if (!this.first) this.last = null;  // Queue is empty after dequeue
+                return i.value;
+            }
+
+            toString() {
+                let str = "";
+                let i = this.first;
+                while (i) {
+                    str += i.value + " ";
+                    i = i.next;
+                }
+                return str.trim();
+            }
         }
 
-        function popea(){
-            let value = p.pop()
-            alert(value)
-            let element = document.getElementById('stacklabel1')
-            element = innerHTML = p.toString()
+        let p = new Pila();
+        let q = new Cua();
+
+        function pushea() {
+            let value = prompt("Añade un valor:");
+            p.push(value);
+            let element = document.getElementById('stacklabel1');
+            element.innerHTML = "Stack: " + p.toString();
         }
 
-        function enqueue(){
-
+        function popea() {
+            let value = p.pop();
+            alert("Popped value: " + (value ?? "Stack is empty"));
+            let element = document.getElementById('stacklabel1');
+            element.innerHTML = "Stack: " + p.toString();
         }
-        
 
-        
+        function enqueue() {
+            let value = prompt("Inserta un valor:");
+            q.enqueue(value);
+            let element = document.getElementById('stacklabel2');
+            element.innerHTML = "Queue: " + q.toString();
+        }
 
-
+        function clickdequeue() {
+            let value = q.dequeue();
+            alert("Dequeued value: " + (value ?? "Queue is empty"));
+            let element = document.getElementById('stacklabel2');
+            element.innerHTML = "Queue: " + q.toString();
+        }
 
     </script>
 </body>
