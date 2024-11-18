@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+
+        }
+        .screen{
+            
+            display: block;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .mastermind{
+            border: solid 5px;
+            border-radius: 50px;
+            background: linear-gradient(to top, rgb(13, 45, 114), rgb(7, 64, 189));
+            
+        }
+        .fila1{
+            display: flex;
+            padding: 5px;
+        }
+        .fila2{
+            display: flex;
+            padding: 5px;
+        }
+        .fila3{
+            display: flex;
+            padding: 5px;
+        }
+        .fila4{
+            display: flex;
+            padding: 5px;
+        }
+        .fila5{
+            display: flex;
+            padding: 5px;
+        }
+        .fila6{
+            display: flex;
+            padding: 5px;
+        }
+        .fila7{
+            display: flex;
+           padding: 5px;
+        }
+        .fila8{
+            display: flex;
+            padding: 5px;
+        }
+        .fila9{
+            display: flex;
+            padding: 5px;
+        }
+        .fila10{
+            display: flex;
+            padding: 5px;
+        }
+
+        .jugador{
+            display: flex;
+            padding: 10px;
+            justify-content: center;
+        }
+        .botones{
+            display: flex;
+            padding: 10px;
+            justify-content: center;            
+        }
+        .cuadrobolas{
+            display: block;
+            justify-content: center;
+            border: solid 5px;
+            border-radius: 10px;
+            margin-left: 30px;
+            margin-right: 15px;
+            margin-bottom: 5px;
+            background: radial-gradient(rgb(15, 39, 90), rgb(12, 47, 122));
+        }
+
+        .filabolas1{
+            display: flex;
+            flex-wrap: wrap;
+            
+
+        }
+        .filabolas2{
+            display: flex;
+            flex-wrap: wrap;
+            
+
+        }
+
+        .confirmar1{
+            border: solid;
+            width: 12px;
+            height: 12px;
+            margin: 5px;
+            border-radius: 50%;
+            background: radial-gradient(rgb(177, 176, 176), rgb(68, 68, 68));
+        }
+        .confirmar2{
+            border: solid;
+            width: 12px;
+            height: 12px;
+            margin: 5px;
+            border-radius: 50%;
+            background: radial-gradient(rgb(177, 176, 176), rgb(68, 68, 68));
+        }
+        .bola1{
+            border: solid;
+            width: 30px;
+            height: 30px;
+            border-radius:  50%;
+            margin: 5px;
+            background: radial-gradient(rgb(177, 176, 176), rgb(68, 68, 68));
+        }
+        .bola2{
+            border: solid;
+            width: 30px;
+            height: 30px;
+            border-radius:  50%;
+            margin: 5px;
+            background: radial-gradient(rgb(177, 176, 176), rgb(68, 68, 68));
+        }
+        .bola3{
+            border: solid;
+            width: 30px;
+            height: 30px;
+            border-radius:  50%;
+            margin: 5px;
+            background: radial-gradient(rgb(177, 176, 176), rgb(68, 68, 68));
+        }
+        .bola4{
+            border: solid;
+            width: 30px;
+            height: 30px;
+            border-radius:  50%;
+            margin: 5px;
+            background: radial-gradient(rgb(177, 176, 176), rgb(68, 68, 68));
+        }
+        .bolajugador1{
+            border: solid;
+            width: 30px;
+            height: 30px;
+            border-radius:  50%;
+            margin: 5px;
+            background: radial-gradient(rgb(212, 27, 27), rgb(151, 22, 22));
+        }
+        .bolajugador2{
+            border: solid;
+            width: 30px;
+            height: 30px;
+            border-radius:  50%;
+            margin: 5px;
+            background: radial-gradient(rgb(25, 60, 218), rgb(21, 47, 163));
+        }
+        .bolajugador3{
+            border: solid;
+            width: 30px;
+            height: 30px;
+            border-radius:  50%;
+            margin: 5px;
+            background: radial-gradient(rgb(48, 155, 22), rgb(41, 117, 22));
+        }
+        .bolajugador4{
+            border: solid;
+            width: 30px;
+            height: 30px;
+            border-radius:  50%;
+            margin: 5px;
+            background: radial-gradient(rgb(233, 229, 31), rgb(165, 163, 28));
+        }
+        .bolajugador5{
+            border: solid;
+            width: 30px;
+            height: 30px;
+            border-radius:  50%;
+            margin: 5px;
+            background: radial-gradient(rgb(176, 32, 189), rgb(135, 25, 145));
+        }
+        .bolajugador6{
+            border: solid;
+            width: 30px;
+            height: 30px;
+            border-radius:  50%;
+            margin: 5px;
+            background: radial-gradient(rgb(228, 129, 36), rgb(187, 107, 32));
+        }
+    </style>
+</head>
+<body>
+    <div class="screen">
+        <div class="mastermind">
+            <div class="fila1">
+                <div class="bola1"></div>
+                <div class="bola2"></div>
+                <div class="bola3"></div>
+                <div class="bola4"></div>
+                <div class="cuadrobolas">
+                    <div class="filabolas1">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                    <div class="filabolas2">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila2">
+                <div class="bola1"></div>
+                <div class="bola2"></div>
+                <div class="bola3"></div>
+                <div class="bola4"></div>
+                <div class="cuadrobolas">
+                    <div class="filabolas1">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                    <div class="filabolas2">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila3">
+                <div class="bola1"></div>
+                <div class="bola2"></div>
+                <div class="bola3"></div>
+                <div class="bola4"></div>
+                <div class="cuadrobolas">
+                    <div class="filabolas1">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                    <div class="filabolas2">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila4">
+                <div class="bola1"></div>
+                <div class="bola2"></div>
+                <div class="bola3"></div>
+                <div class="bola4"></div>
+                <div class="cuadrobolas">
+                    <div class="filabolas1">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                    <div class="filabolas2">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila5">
+                <div class="bola1"></div>
+                <div class="bola2"></div>
+                <div class="bola3"></div>
+                <div class="bola4"></div>
+                <div class="cuadrobolas">
+                    <div class="filabolas1">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                    <div class="filabolas2">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila6">
+                <div class="bola1"></div>
+                <div class="bola2"></div>
+                <div class="bola3"></div>
+                <div class="bola4"></div>
+                <div class="cuadrobolas">
+                    <div class="filabolas1">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                    <div class="filabolas2">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila7">
+                <div class="bola1"></div>
+                <div class="bola2"></div>
+                <div class="bola3"></div>
+                <div class="bola4"></div>
+                <div class="cuadrobolas">
+                    <div class="filabolas1">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                    <div class="filabolas2">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila8">
+                <div class="bola1"></div>
+                <div class="bola2"></div>
+                <div class="bola3"></div>
+                <div class="bola4"></div>
+                <div class="cuadrobolas">
+                    <div class="filabolas1">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                    <div class="filabolas2">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila9">
+                <div class="bola1"></div>
+                <div class="bola2"></div>
+                <div class="bola3"></div>
+                <div class="bola4"></div>
+                <div class="cuadrobolas">
+                    <div class="filabolas1">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                    <div class="filabolas2">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila10">
+                <div class="bola1"></div>
+                <div class="bola2"></div>
+                <div class="bola3"></div>
+                <div class="bola4"></div>
+                <div class="cuadrobolas">
+                    <div class="filabolas1">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                    <div class="filabolas2">
+                        <div class="confirmar1"></div>
+                        <div class="confirmar2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="jugador">
+            <div class="bolajugador1"></div>
+            <div class="bolajugador2"></div>
+            <div class="bolajugador3"></div>
+            <div class="bolajugador4"></div>
+            <div class="bolajugador5"></div>
+            <div class="bolajugador6"></div>
+        </div>
+        <div class="botones">
+            <button>Confirmar</button>
+            <button>Rehacer</button>
+        </div>
+    </div>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>

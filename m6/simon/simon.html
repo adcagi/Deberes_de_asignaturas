@@ -10,14 +10,39 @@
             height: 50px;
             width: 50px;
         }
+        .green{
+            background-color: green;
+            height: 50px;
+            width: 50px;
+        }
+        .blue{
+            background-color: blue;
+            height: 50px;
+            width: 50px;
+        }
+        .yellow{
+            background-color: rgb(255, 255, 0);
+            height: 50px;
+            width: 50px;
+        }
     </style>
 </head>
 <body>
-    <div  id="red" onclick="changecolor()" class="red"></div>
+    <div  id="red" onclick="changecolorRed()" class="red"></div>
+    <div  id="green" onclick="changecolorGreen()" class="green"></div>
+    <div  id="blue" onclick="changecolorBlue()" class="blue"></div>
+    <div  id="yellow" onclick="changecolorYellow()" class="yellow"></div>
     <script>
         element = document.getElementById("red");
+        element2 = document.getElementById("green");
+        element3 = document.getElementById("blue");
+        element4 = document.getElementById("yellow");
         let count = 0
-        function changecolor(){
+        let count2 = 0
+        let count3 = 0
+        let count4 = 0
+        function changecolorRed(){
+            
                 if (element.style.backgroundColor == "red" || element.style.backgroundColor === ""){
                     element.style.backgroundColor = 'rgb(255, 139, 119)';
                 }else{
@@ -25,7 +50,46 @@
                 }
                 if(count < 5){
                     count++;
-                    setTimeout(changecolor, 500);
+                    setTimeout(changecolorRed, 500);
+                
+
+                }
+            }
+            function changecolorGreen(){
+                if (element2.style.backgroundColor == "green" || element2.style.backgroundColor === ""){
+                    element2.style.backgroundColor = 'rgb(0, 128, 100)';
+                }else{
+                    element2.style.backgroundColor = 'green';
+                }
+                if(count2 < 5){
+                    count2++;
+                    setTimeout(changecolorGreen, 500);
+                
+
+                }
+            }
+            function changecolorBlue(){
+                if (element3.style.backgroundColor == "blue" || element3.style.backgroundColor === ""){
+                    element3.style.backgroundColor = 'rgb(0, 100, 255)';
+                }else{
+                    element3.style.backgroundColor = 'blue';
+                }
+                if(count3 < 5){
+                    count3++;
+                    setTimeout(changecolorBlue, 500);
+                
+
+                }
+            }
+            function changecolorYellow(){
+                if (element4.style.backgroundColor == "yellow" || element4.style.backgroundColor === ""){
+                    element4.style.backgroundColor = 'rgb(255, 255, 100)';
+                }else{
+                    element4.style.backgroundColor = 'yellow';
+                }
+                if(count4 < 5){
+                    count4++;
+                    setTimeout(changecolorYellow, 500);
                 
 
                 }
