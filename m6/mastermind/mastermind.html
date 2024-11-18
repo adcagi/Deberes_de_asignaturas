@@ -362,21 +362,90 @@
             </div>
         </div>
         <div class="jugador">
-            <div class="bolajugador1"></div>
-            <div class="bolajugador2"></div>
-            <div class="bolajugador3"></div>
-            <div class="bolajugador4"></div>
-            <div class="bolajugador5"></div>
-            <div class="bolajugador6"></div>
+            <div class="bolajugador1" onclick="clicarBolaJugador1()"></div>
+            <div class="bolajugador2" onclick="clicarBolaJugador2()"></div>
+            <div class="bolajugador3" onclick="clicarBolaJugador3()"></div>
+            <div class="bolajugador4" onclick="clicarBolaJugador4()"></div>
+            <div class="bolajugador5" onclick="clicarBolaJugador5()"></div>
+            <div class="bolajugador6" onclick="clicarBolaJugador6()"></div>
         </div>
         <div class="botones">
-            <button>Confirmar</button>
-            <button>Rehacer</button>
+            <button onclick="confirmar()">Confirmar</button>
+            <button onclick="rehacer()">Rehacer</button>
         </div>
     </div>
 
     <script>
-        
+        element = document.getElementsByClassName("bolajugador1")[0]
+        element1 = document.getElementsByClassName("bolajugador2")[0]
+        element2 = document.getElementsByClassName("bolajugador3")[0]
+        element3 = document.getElementsByClassName("bolajugador4")[0]
+        element4 = document.getElementsByClassName("bolajugador5")[0]
+        element5 = document.getElementsByClassName("bolajugador6")[0]
+        function clicarBolaJugador1(){
+            if (element.style.backgroundImage == "radial-gradient(rgb(212, 27, 27), rgb(151, 22, 22))" ||  element.style.backgroundColor == ""){                
+                element.style.background = "radial-gradient(rgb(255, 70, 70), rgb(191, 50, 70))"                
+                setTimeout(clicarBolaJugador1, 100)
+            }else{
+                element.style.backgroundImage = "radial-gradient(rgb(212, 27, 27), rgb(151, 22, 22))"
+            }
+
+        }
+        function clicarBolaJugador2(){
+            if (element1.style.backgroundImage == "radial-gradient(rgb(25, 60, 218), rgb(21, 47, 163))" ||  element1.style.backgroundColor == ""){                
+                element1.style.background = "radial-gradient(rgb(105, 60, 218), rgb(101, 47, 163))"                
+                setTimeout(clicarBolaJugador2, 100)
+            }else{
+                element1.style.backgroundImage = "radial-gradient(rgb(25, 60, 218), rgb(21, 47, 163))"
+            }
+
+        }
+        function clicarBolaJugador3(){
+            if (element2.style.backgroundImage == "radial-gradient(rgb(48, 155, 22), rgb(41, 117, 22))" ||  element2.style.backgroundColor == ""){                
+                element2.style.background = "radial-gradient(rgb(108, 155, 22), rgb(101, 117, 22))"                
+                setTimeout(clicarBolaJugador3, 100)
+            }else{
+                element2.style.backgroundImage = "radial-gradient(rgb(48, 155, 22), rgb(41, 117, 22))"
+            }
+
+        }
+        function clicarBolaJugador4(){
+            if (element3.style.backgroundImage == "radial-gradient(rgb(233, 229, 31), rgb(165, 163, 28))" ||  element3.style.backgroundColor == ""){                
+                element3.style.background = "radial-gradient(rgb(255, 229, 31), rgb(205, 163, 28))"                
+                setTimeout(clicarBolaJugador4, 100)
+            }else{
+                element3.style.backgroundImage = "radial-gradient(rgb(233, 229, 31), rgb(165, 163, 28))"
+            }
+
+        }
+
+        function clicarBolaJugador5(){
+            if (element4.style.backgroundImage == "radial-gradient(rgb(176, 32, 189), rgb(135, 25, 145))" ||  element4.style.backgroundColor == ""){                
+                element4.style.background = "radial-gradient(rgb(206, 32, 189), rgb(195, 25, 145))"                
+                setTimeout(clicarBolaJugador5, 100)
+            }else{
+                element4.style.backgroundImage = "radial-gradient(rgb(176, 32, 189), rgb(135, 25, 145))"
+            }
+
+        }
+
+        function clicarBolaJugador6(){
+            if (element5.style.backgroundImage == "radial-gradient(rgb(228, 129, 36), rgb(187, 107, 32))" ||  element5.style.backgroundColor == ""){                
+                element5.style.background = "radial-gradient(rgb(255, 129, 36), rgb(227, 107, 32))"                
+                setTimeout(clicarBolaJugador6, 100)
+            }else{
+                element5.style.backgroundImage = "radial-gradient(rgb(228, 129, 36), rgb(187, 107, 32))"
+            }
+
+        }
+
+
+        function confirmar(){
+            alert("Colores encontrados: " + "colores equivocados: ")
+        }
+        function rehacer(){
+            alert("se reinicia tu intento")
+        }
     </script>
 
 </body>
