@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <style>
+        #contador {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <textarea id="texto" onkeypress="return limita(100);"></textarea>
+    <textarea id="texto" onkeypress="return limita(10);"></textarea>
+    <div id="contador">Caracteres: 0</div>
     <script src="ej7.js"></script>
 </body>
 </html>

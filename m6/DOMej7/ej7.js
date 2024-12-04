@@ -1,5 +1,5 @@
 function limita(maximoCaracteres) { 
-    var elemento = document.getElementById("texto"); 
+    let elemento = document.getElementById("texto"); 
     if(elemento.value.length >= maximoCaracteres ) { 
         return false; 
     } else { 
@@ -7,5 +7,8 @@ function limita(maximoCaracteres) {
     } 
 }
 
-
-limita(10)
+// Agregar el event listener para el evento 'input'
+document.getElementById("texto").addEventListener("input", function() {
+    let contador = document.getElementById("contador");
+    contador.textContent = "Caracteres: " + this.value.length;
+});
