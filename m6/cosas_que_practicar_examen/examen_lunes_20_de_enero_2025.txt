@@ -1,0 +1,4 @@
+candy crush con DOM
+mezcla de colores con DOM 
+juego de parejas con DOM
+formulario con DOM
