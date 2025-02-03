@@ -1,0 +1,37 @@
+
+#filtro{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 50px;
+    background-color: rgba(219, 99, 99, 0.829);
+    border-bottom-style: solid ;
+    border-radius:20px;
+    border-color: rgb(255, 253, 125);
+}
+
+div#bebidasfiltro{
+    width: 100px;
+    padding: 10px;
+    vertical-align: bottom;
+    text-align: center;
+}
+
+div#platosfiltro{
+    width: 100px;
+    padding: 10px;
+    vertical-align: bottom;
+    text-align: center;
+}
+
+div#postres filtro{
+    width: 100px;
+    padding: 10px;
+    vertical-align: bottom;
+    text-align: center;
+}
+
+#bebidas{
+    height: auto;
+    background-color: rgba(219, 99, 99, 0.829); 
+}
