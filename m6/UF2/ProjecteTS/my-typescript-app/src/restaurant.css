@@ -1,34 +1,58 @@
 
-#filtro{
+div#filtro{
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
     height: 50px;
-    background-color: rgba(219, 99, 99, 0.829);
-    border-bottom-style: solid ;
-    border-radius:20px;
-    border-color: rgb(255, 253, 125);
+    
 }
 
 div#bebidasfiltro{
     width: 100px;
     padding: 10px;
+    margin: 10px;
+    box-shadow: 1px 4px 0px 0px rgb(195, 208, 212);
+    background-color: rgba(219, 99, 99, 0.829);
     vertical-align: bottom;
     text-align: center;
+    border-radius:20px;
+}
+
+div#bebidasfiltro:hover{
+    background-color: rgba(245, 137, 137, 0.829);
 }
 
 div#platosfiltro{
-    width: 100px;
-    padding: 10px;
+    width:100px;
+    padding:10px;
+    margin: 10px;
+    box-shadow: 1px 4px 0px 0px rgb(195, 208, 212);
+    background-color: rgba(219, 99, 99, 0.829);
     vertical-align: bottom;
     text-align: center;
+    border-radius:20px;
+}
+div#platosfiltro:hover{
+    background-color: rgba(245, 137, 137, 0.829);
 }
 
-div#postres filtro{
+
+div#postresfiltro{
     width: 100px;
     padding: 10px;
+    margin: 10px;
+    box-shadow: 1px 4px 0px 0px rgb(195, 208, 212);
+    background-color: rgba(219, 99, 99, 0.829);
     vertical-align: bottom;
     text-align: center;
+    border-radius:20px;
+}
+
+div#postresfiltro:hover{
+    background-color: rgba(245, 137, 137, 0.829);
 }
 
 #bebidas{
