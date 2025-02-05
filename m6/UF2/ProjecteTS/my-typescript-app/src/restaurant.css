@@ -58,4 +58,53 @@ div#postresfiltro:hover{
 #bebidas{
     height: auto;
     background-color: rgba(219, 99, 99, 0.829); 
+    box-shadow: 1px 4px 0px 0px rgb(195, 208, 212);
+    border-radius:20px;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
 }
+
+#bebida1{
+    display: flex;
+    flex-wrap: wrap;
+}
+img#pollo{
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+#sumarRestarProducto{
+    display: block;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: aliceblue;
+    box-shadow: 1px 4px 0px 0px rgb(195, 208, 212);
+    height: 90px;
+    width: 50px;
+    margin: 10px;
+}
+
+#sumarRestarProducto #sumar{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid;
+    height: 33%;
+    width: 100%;
+    
+}
+
+#suma{
+    padding: 1px;
+    margin: 10px;
+}
+
+#sumarRestarProducto#sumar{
+    border: 1px solid;
+}
+
