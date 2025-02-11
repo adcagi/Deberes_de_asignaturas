@@ -6,7 +6,7 @@ import Product from "./producte";
 
     constructor(id:number, name: string, price:number, acohol: boolean, sugar: boolean){
        super(id, name, price)
-       this.sugar = sugar, 
+       this.sugar = sugar,
        this.acohol = acohol
     }
 
