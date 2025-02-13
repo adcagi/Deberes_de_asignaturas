@@ -76,7 +76,8 @@ img#pollo{
 
 
 #sumarRestarProducto{
-    display: block;
+    display: flex;
+    justify-content: center;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -84,31 +85,24 @@ img#pollo{
     background-color: aliceblue;
     box-shadow: 1px 4px 0px 0px rgb(195, 208, 212);
     height: 90px;
-    width: 50px;
+    width: 100px;
     margin: 10px;
+    flex-direction: row;
+    align-items: center;
 }
 
 #sumarRestarProducto #sumar{
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-radius: 5px;
     justify-content: center;
     text-align: center;
-    border-bottom: 1px solid;
     height: 33%;
     width: 100%;
     
 }
 
-#sumar{
-    padding-top: 30%;
-}
-#sumarRestarProducto#sumar{
-    border: 1px solid;
-}
 
 #sumarRestarProducto #restar{
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-radius: 5px;
     justify-content: center;
     text-align: center;
     height: 33%;
@@ -126,17 +120,12 @@ img#pollo{
     
 }
 
-#restar{
-    padding-bottom: 30% ;
-}
-
 #resultado{
-    border:1px solid;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.445);
-    height: 30px;
-    width: 50px;
-    margin: 10px;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+    height: 33%;
+    width: 100%;
 }
 
 

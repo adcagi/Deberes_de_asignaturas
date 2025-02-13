@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="src/restaurant.css">
+    <script src="src/js/cantidadPedidos.js"></script>
 </head>
 <body>
     <h1>Restaurante Virtual</h1>
@@ -15,10 +16,10 @@
                 <img id="pollo" alt="pollo" src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmKcBgdka-G7KnzzxqPR-8EkyUpkZecODxhw&s" height="90px" width="90px"/>
             </div>
             <div id="info_aergias"><p>Pollo, alitas, muslos, pechuga con salsa</p></div>
-            <div id="resultado"></div>
             <div id="sumarRestarProducto">
-                <button id="sumar" onclick="sumar()">+</button>
-                <button id="restar">_</button>
+                <div id="resultado">0</div> 
+                <button id="sumar" >+</button>
+                <button id="restar">-</button>
             </div>
         </div>
         <div id="bebida1"></div>
