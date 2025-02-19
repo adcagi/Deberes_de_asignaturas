@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded',  () => {
       return promise
     }
     async function updateAppInfor(){
-      let info = await GetPartial()
+      let info = await    GetPartial()
       console.log(info)
     }
     updateAppInfor()
