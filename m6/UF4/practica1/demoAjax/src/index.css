@@ -1,13 +1,22 @@
-#app{
-    width: 500px;
-    height: 300px;
-    border: 3px solid black;
-}
-
-#proyevto{
+#proyecto{
     width: 100%;
     height: auto;
     display: flex;
     flex-wrap: wrap;
 }
 
+#proyecto div{
+    width: 50%;
+    height: 50%;
+    border: 1px solid black;
+}
+
+
+#imagen
+{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

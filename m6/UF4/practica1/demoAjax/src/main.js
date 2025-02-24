@@ -48,18 +48,21 @@ document.addEventListener('DOMContentLoaded', () => {
         for(let i in jsonData){
           let info2 = await getPage('https://jsonplaceholder.typicode.com/users/' + jsonData[i].userId);
           let info3 = await getPage('https://jsonplaceholder.typicode.com/posts/' + jsonData[i].userId + '/comments');
+          let pic = await getPage('https://api.dicebear.com/9.x/adventurer/svg?seed=' + i);
           let userComments = JSON.parse(info3);
           let userData = JSON.parse(info2);
           
-            element.innerHTML += `<div id="app"><h1></h1></div>
+            element.innerHTML += `
+            <div id="app"><h1></h1></div>
             <div id="proyecto">
-              <div id="imagen"></div>
+              <div id="imagen">${pic}</div>
                 <div id="info">
                   <div id="nombre">${userData.username}</div>
                 <div id="descripcion">${jsonData[i].body}</div>
                 <div id="comments">${userComments.length}</div>
             </div>  
-          </div>`
+          </div>
+          `
       }
   }
 
