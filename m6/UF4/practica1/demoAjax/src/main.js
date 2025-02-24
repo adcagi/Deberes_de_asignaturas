@@ -1,69 +1,71 @@
-document.addEventListener('DOMContentLoaded',  () => {
-    //-------------------Partial HTML-------------------
-    function GetPartial(){
+document.addEventListener('DOMContentLoaded', () => {
+  //-------------------Partial HTML-------------------
+  function GetPartial() {
+    let promise = new Promise(function(resolve, reject) {
+      let ajax = new XMLHttpRequest();
+      ajax.onload = function() {
+        resolve(this.responseText);
+      };
+      ajax.onerror = function() {
+        reject(new Error('Network error'));
+      };
+      ajax.open('GET', '/partial.html');
+      ajax.send();
+    });
+    return promise;
+  }
 
-    let promise = new Promise(function(resolve, reject){
-    let ajax = new XMLHttpRequest();
-    ajax.onload = function(){
-       resolve(this.responseText)
-    }
-    ajax.open('GET', '/partial.html')  
-    ajax.send()
-      })
-      return promise
-    }
-    updateAppInfor()
+  async function updateAppInfor() {
+    let info = await GetPartial();
+    console.log(info);
+  }
 
-    
+  //-------------------Partial HTML-------------------
 
-    async function updateAppInfor(){
-      let info = await   GetPartial()
-      console.log(info)
-    }
-    //-------------------Partial HTML-------------------
+  //-------------------url HTML-------------------
+  function getPage(url) {
+    let promise = new Promise(function(resolve, reject) {
+      let ajax = new XMLHttpRequest();
+      ajax.onload = function() {
+        resolve(this.responseText);
+      };
+      ajax.onerror = function() {
+        reject(new Error('Network error'));
+      };
+      ajax.open('GET', url);
+      ajax.send();
+    });
+    return promise;
+  }
 
+  async function getiNFO() {
+      let info = await getPage('https://jsonplaceholder.typicode.com/posts');
 
-    //-------------------url HTML-------------------
-    function getPage(url){
-      let promise = new Promise(function(resolve, reject){
-        let ajax = new XMLHttpRequest();
-        ajax.onload = function(){
-          if(this.status >= 200 && this.status < 300){
-          resolve(this.responseText)
-          }else{
-            reject(new Error('Request failed: ' + this.statusText))
-          }
-          ajax.onerror = function(){
-            reject(new Error('Network error'))
-          }
-        }
-      ajax.open('GET', url)
-      ajax.send()
-      })
-      return promise
-    }
-
-    async function getiNFO(){
-      try{
-        let info = await getPage('https://api.dicebear.com/9.x/adventurer/svg?seed=1')
-        let jsonData = JSON.parse(info)
-        console.log(jsonData)
-  
-        let app = document.getElementById('app')
-        app.innerHTML = `<pre>${JSON.stringify(jsonData, null, 2)}</pre>`
-
-      }catch(error){
-        console.error('Error: ')
+      let jsonData = JSON.parse(info);
+      let element = document.getElementById('app');
+      
+      
+        for(let i in jsonData){
+          let info2 = await getPage('https://jsonplaceholder.typicode.com/users/' + jsonData[i].userId);
+          let info3 = await getPage('https://jsonplaceholder.typicode.com/posts/' + jsonData[i].userId + '/comments');
+          let userComments = JSON.parse(info3);
+          let userData = JSON.parse(info2);
+          
+            element.innerHTML += `<div id="app"><h1></h1></div>
+            <div id="proyecto">
+              <div id="imagen"></div>
+                <div id="info">
+                  <div id="nombre">${userData.username}</div>
+                <div id="descripcion">${jsonData[i].body}</div>
+                <div id="comments">${userComments.length}</div>
+            </div>  
+          </div>`
       }
-    }
+  }
 
-
-
-    getiNFO();
-    //-------------------url HTML-------------------
-    // promise.then((result) => document.getElementById('app').innerHTML= result)
-  })
-
+  getiNFO();
+  updateAppInfor();
+});
 
   // setTimeout( function() {
   //   let ajax = new XMLHttpRequest();
