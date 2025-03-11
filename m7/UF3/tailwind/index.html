@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./src/output.css" >
+    <link rel="stylesheet" href="./src/output.css" >   
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
 </head>
 <body>
     <h1 class="text-3xl font-bold underline">
@@ -16,12 +18,69 @@
     <h1>Ej 2: </h1>
     <div class="bg-blue-100 shadow-md w-xs">
 
-        <img src="https://placeholder" class="object-cover h-28 w-46" />
+        <img src="images/seregios.png" class="object-cover h-28 w-46" alt="prueba" />
 
         <h2 class="font-black text-xl">Títol</h2>
 
         <p class="text-xs">Aquest és un text de prova.</p>
 
     </div>  
+
+    <h1>Ej 3:</h1>
+    <div class="bg-orange-400 inline-flex items-center justify-center">
+
+        <ul class=" inline-flex items-center justify-center">
+
+            <li class="font-medium hover:text-blue-600 dark:text-blue-500 hover:underline text-black m-2" ><a href="#">Inici</a></li>
+
+            <li class="font-medium text-black  hover:text-blue-600 dark:text-blue-500 hover:underline m-2"><a href="#">Serveis</a></li>
+
+            <li class="font-medium text-black  hover:text-blue-600 dark:text-blue-500 hover:underline m-2"><a href="#">Contacte</a></li>
+
+        </ul>
+
+    </div>
+    <h1>Ej 4:</h1>
+    <table class="border border-solid rounded-lg">
+
+        <thead>
+
+            <tr>
+
+                <th class="...">Nom</th>
+
+                <th class="...">Edat</th>
+
+                <th class="...">País</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td class="...">Anna</td>
+
+                <td class="...">25</td>
+
+                <td class="...">Espanya</td>
+
+            </tr>
+
+            <tr>
+
+                <td class="...">Lluís</td>
+
+                <td class="...">30</td>
+
+                <td class="...">Mèxic</td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
 </body>
 </html>
