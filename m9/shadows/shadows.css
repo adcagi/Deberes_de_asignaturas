@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'apeshit'; /* Elige un nombre único para la fuente */
+    src: url('Ape\ Shit\ .ttf') format('woff2'); /* Incluye más formatos para mayor compatibilidad */
+    font-style: normal; /* Estilo (normal, italic) */
+    font-weight: normal; /* Peso (normal, bold, 400, 700, etc.) */
+}
+
+@font-face {
+    font-family: 'techno'; /* Elige un nombre único para la fuente */
+    src: url('Techno.ttf') format('woff2'); /* Incluye más formatos para mayor compatibilidad */
+    font-style: normal; /* Estilo (normal, italic) */
+    font-weight: normal; /* Peso (normal, bold, 400, 700, etc.) */
+}
+
+@font-face {
+    font-family: 'halloween'; /* Elige un nombre único para la fuente */
+    src: url('Scary\ Halloween\ Font.ttf') format('woff2'); /* Incluye más formatos para mayor compatibilidad */
+    font-style: normal; /* Estilo (normal, italic) */
+    font-weight: normal; /* Peso (normal, bold, 400, 700, etc.) */
+}
+/* Ejercicio 1*/
+h1{
+    font-family: 'apeshit';
+}
+
+.g1, .g2, .g3{
+    display: flex;
+
+}
+
+.c1, .c2, .c3{
+    width: 100px;
+    height: 100px;
+    border:1px solid black;
+    border-radius: 5px;
+    margin: 50px;
+}
+
+.g1 .c1{
+    box-shadow: 1mm 1mm red;
+}
+
+.g1 .c2{
+    box-shadow: 1mm 1mm 3mm red;
+}
+
+.g1 .c3{
+    box-shadow: 0mm 0mm 0mm 1mm red;
+}
+
+.g2 .c1{
+    box-shadow: 0mm 0mm 3mm 0.1mm red inset;
+}
+
+.g2 .c2{
+    box-shadow: 1mm 1mm 5mm 1mm red inset;
+}
+
+.g2 .c3{
+    box-shadow: -1mm 1mm   red, -2mm 2mm rgba(255, 43, 43, 0.692), -3mm 3mm rgba(255, 64, 106, 0.692);
+}
+
+.g3 .c1{
+    box-shadow: 3mm -3mm white, 3mm -3mm 0mm 0.5mm red ;
+}
+.g3 .c2{
+    box-shadow: 0mm 0mm 0mm 1mm blue, 0mm 0mm 0mm 2mm green,  0mm 0mm 0mm 3mm yellow, 0mm 0mm 0mm 4mm orange,  0mm 0mm 0mm 5mm red;
+}
+
+.g3 .c3{
+    box-shadow: 0mm 0mm 0mm 0.5mm blue, -3mm 3mm white, -3mm 3mm 0mm 1mm green, -6mm 6mm white, -6mm 6mm 0mm 1mm yellow,-9mm 9mm white, -9mm 9mm 0mm 1mm orange,-12mm 12mm white, -12mm 12mm 0mm 1mm red;
+}
+
+/* Ejercicio 2*/
+
+.ej2, .gp{
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.p1, .p2, .p3{
+    width: 300px;
+    height: 100px;
+    border:1px solid black;
+    border-radius: 5px;
+    margin: 50px;
+    text-align: center;
+    justify-content: center;
+}
+
+.p1 h1{
+    font-family: 'apeshit';
+    color: red;
+    text-shadow: 0mm -3mm orange;
+}
+.p2 h1{
+    font-family: 'techno';
+    color: cyan;
+    text-shadow: -1mm 1mm grey;
+}
+.p3 h1{
+    font-family: 'halloween';
+    color: blue;
+    text-shadow: 0mm 0mm 3mm  cyan;
+}
+
+/* Ejercicio 3*/
+
+
