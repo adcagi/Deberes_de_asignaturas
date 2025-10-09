@@ -1,0 +1,201 @@
+.ej1{
+    margin-bottom:10px;
+}
+
+.ej1 .rojo{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transition: transform 2s;
+    
+}
+
+.ej1 .rojo:hover{
+transform: scaleX(3);
+    
+}
+/* EJERCICIO 2 */
+
+.ej2{
+    margin-bottom:10px;
+}
+
+.ej2 .rojo2{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transition: transform 2s;
+    margin-bottom: 10px;
+    
+}
+
+.ej2 .rojo2:hover{
+    transform: scaleX(3);
+}
+
+.ej2 .azul{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(38, 0, 255);
+    transition: transform 2s;
+    transition-delay: 2s;
+    
+}
+
+.ej2 .rojo2:hover+.azul{
+    transform:scaleX(3);
+}
+
+/* EJERCICIO 3 */
+
+.ej3{
+    margin-top:50px;
+}
+.ej3 .cuadrado{
+    width: 100px;
+    height:100px;
+    border:0px solid black;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom, grey, white);
+    box-shadow: 2mm 2mm 3mm grey;
+
+}
+
+.zinogre{
+    width: 100px;
+    height:100px;
+    transform: translate(0px, -100px);
+    transition: transform 1s;
+}
+.zinogre:hover{
+    transform:scale(1.2) translate(0mm, -30mm);
+}
+
+/* EJERCICIO 4 */
+
+.ej4{
+    margin-top:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ej4 .cuadrado1{
+    position: absolute;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height:100px;
+    background-color: red;
+    transition: transform 3s;
+}
+.ej4 .cuadrado2{
+    position: absolute;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 70px;
+    height:70px;
+    background-color: green;
+    transition: transform 4s;
+    transition-delay:  1s;
+}
+.ej4 .cuadrado3{
+    position: absolute;
+    width: 40px;
+    height:40px;
+    background-color: blue;
+    transition: transform 5s;   
+    transition-delay:  2s;
+}
+
+.ej4 .cuadrado1:hover,
+.ej4 .cuadrado1:hover ~ .cuadrado2,
+.ej4 .cuadrado1:hover ~ .cuadrado3 {
+    transform: rotate(180deg);
+}
+
+/* EJERCICIO 5 */
+
+.ej5{
+    margin-top:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grupos{
+    display: flex;
+    position: absolute;
+
+}
+
+.grupos:hover>div .c1{
+    transform:translate(-50px, 0px) rotate(-90deg);
+
+}
+.grupos:hover>div .c2{
+    transform:translate(-50px, 0px) rotate(90deg);
+
+}
+
+.grupos:hover>div .c3{
+    transform:translate(50px, 0px) rotate(90deg);
+
+}
+
+.grupos:hover>div .c4{
+    transform:translate(50px, 0px) rotate(-90deg);
+
+}
+
+.c1{
+    width:50px;
+    height: 50px;
+    background-color: red;
+    transition: all 1s;
+}
+.c2{
+    width:50px;
+    height: 50px;
+    background-color: blue;
+    transition: all 1s;
+}
+.c3{
+    width:50px;
+    height: 50px;
+    background-color: yellow;
+    transition: all 1s;
+}
+.c4{
+    width:50px;
+    height: 50px;
+    background-color: green;
+    transition: all 1s;
+}
+
+/* EJERCICIO 6 */
+
+.campanaimg{
+    width: 100px;
+    height:100px;
+    transition: all;
+}
+
+.campanaimg:hover{
+    animation-name: ring;
+    animation-duration: 0.5s;
+    animation-iteration-count:infinite;
+    animation-delay:0s;
+    transform-origin: top;
+}
+@keyframes ring{
+    0% {transform:rotate(0deg);}
+    15%{transform:rotate(-15deg);}
+    25% {transform:rotate(25deg);}
+    50% {transform:rotate(-15deg);}
+    60%{transform:rotate(20deg);}
+    75% {transform:rotate(-15deg);}
+    90%{transform:rotate(15deg);}
+    100% {transform:rotate(0deg);}
+}
