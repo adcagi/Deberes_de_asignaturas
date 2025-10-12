@@ -1,0 +1,594 @@
+html body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+
+.container_b{
+    display: flex;
+    background-color: purple;
+    border-radius: 10px;
+    width: 200px;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.container_b div{
+    background-color: orange;
+    /* width: 50px;
+    height: 50px; */
+    margin: 10px;
+    border-radius: 10px;
+    flex:30%;
+}
+
+.container_b div:nth-child(2){
+    flex:50%;
+}
+
+.items{
+    display: flex;
+    background-color: purple;
+     border-radius: 10px;
+    width: 200px;
+    height: 70px;
+}
+
+.items div{
+    background-color: orange;
+    margin: 10px;
+    border-radius: 10px;
+    flex:30%;
+}
+
+.items div:nth-child(2){
+    flex:50%;
+}
+
+.container_1{
+    width: 20%;
+    height: 100vh;
+}
+
+.container_2{
+    background-color: lightblue;
+    height: 100vh;
+}
+div .flexdirection{
+    background-image:linear-gradient(to bottom, #ff8aff, white);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+}
+.flexdirection_row{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 70px;
+}
+
+.flexdirection_column{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    top:300px;
+}
+
+.flexdirection_row div{
+    flex:25%;
+    height: 50%;
+    background-color:orange;
+    margin: 5px;
+    border-radius: 10px;
+    border:1px solid black;
+    box-shadow:1mm 1mm grey;
+}
+
+
+.flexdirection_column div{
+    position:relative;
+    width: 40px;
+    height: 50px;
+    background-color:orange;
+    margin: 5px;
+    border-radius: 10px;
+    border:1px solid black;
+    box-shadow:1mm 1mm grey;
+}
+
+.flexwrap{
+    background-image:linear-gradient(to bottom, #ff8aff, white);
+    }   
+
+
+.wrapexample{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height: auto;
+    box-shadow: 1mm 1mm grey;
+    background-color: purple;
+    border-radius: 10px;
+}
+
+.wrapexample div{
+    width: 45px;
+    height: 45px;
+    border:1px solid black;
+    background-color: orange;
+    border-radius: 10px ;    
+    margin: 2px;
+}
+
+.justifycontent{
+    background-image:linear-gradient(to bottom, #ff8aff, white);
+}
+.flexstart{
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+    height:auto;
+    background-color: purple;
+    border-radius:10px;
+    box-shadow:1mm 1mm grey;
+}
+
+.flexstart div{
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    margin: 2px;
+    border-radius:10px;
+}
+
+
+
+.flexend{
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    height:auto;
+    background-color: purple;
+    border-radius:10px;
+    box-shadow:1mm 1mm grey;
+}
+
+.flexend div{
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    margin: 2px;
+    border-radius:10px;
+}
+
+
+
+.justifycenter{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height:auto;
+    background-color: purple;
+    border-radius:10px;
+    box-shadow:1mm 1mm grey;
+}
+
+.justifycenter div{
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    margin: 2px;
+    border-radius:10px;
+}
+
+
+.spacebetween{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height:auto;
+    background-color: purple;
+    border-radius:10px;
+    box-shadow:1mm 1mm grey;
+}
+
+.spacebetween div{
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    margin: 2px;
+    border-radius:10px;
+}
+
+
+.spacearound{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    height:auto;
+    background-color: purple;
+    border-radius:10px;
+    box-shadow:1mm 1mm grey;
+}
+
+.spacearound div{
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    margin: 2px;
+    border-radius:10px;
+}
+
+
+
+.spaceevenly{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    height:auto;
+    background-color: purple;
+    border-radius:10px;
+    box-shadow:1mm 1mm grey;
+}
+
+.spaceevenly div{
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    margin: 2px;
+    border-radius:10px;
+}
+
+.alignitems{
+    background-image:linear-gradient(to bottom, #ff8aff, white);
+}
+
+.alignitems .start{
+    width:90%;
+    height: 150px;
+    border-radius:10px ;
+    background-color: purple;
+    display: flex;
+    align-items: flex-start;
+}
+
+.start div{
+    width: 50px;
+    height:50px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+.alignitems .end{
+    width:90%;
+    height: 150px;
+    border-radius:10px ;
+    background-color: purple;
+    display: flex;
+    align-items: flex-end;
+}
+
+.end div{
+    width: 50px;
+    height:50px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.alignitems .center{
+    width:90%;
+    height: 150px;
+    border-radius:10px ;
+    background-color: purple;
+    display: flex;
+    align-items: center;
+}
+
+.center div{
+    width: 50px;
+    height:50px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+
+.alignitems .stretch{
+    width:90%;
+    height: 150px;
+    border-radius:10px ;
+    background-color: purple;
+    display: flex;
+    align-items: stretch;
+}
+
+.stretch div{
+    width: 50px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+.alignitems .baseline{
+    width:90%;
+    height: 150px;
+    border-radius:10px ;
+    background-color: purple;
+    display: flex;
+    align-items: baseline;
+}
+
+.baseline div:nth-child(1){
+    width: 50px;
+    height:50px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+.baseline div:nth-child(2){
+    width: 50px;
+    height:90px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+
+.baseline div:nth-child(3){
+    width: 50px;
+    height:60px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+
+.baseline div:nth-child(4){
+    width: 50px;
+    height:20px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+.aligncontent{
+    background-image:linear-gradient(to bottom, #ff8aff, white);
+}
+
+.alignstart{
+    width:90%;
+    height: 150px;
+    border-radius:10px ;
+    background-color: purple;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.alignstart div{
+    width: 50px;
+    height:50px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+
+.alignend{
+    width:90%;
+    height: 170px;
+    border-radius:10px ;
+    background-color: purple;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+}
+
+.alignend div{
+    width: 50px;
+    height:50px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+
+.aligncenter{
+    width:90%;
+    height: 370px;
+    border-radius:10px ;
+    background-color: purple;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.aligncenter div{
+    width: 50px;
+    height:50px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+.alignstretch{
+    width:90%;
+    height: 270px;
+    border-radius:10px ;
+    background-color: purple;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+}
+
+.alignstretch div{
+    width: 50px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.alignspacebetween{
+    width:90%;
+    height: 270px;
+    border-radius:10px ;
+    background-color: purple;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.alignspacebetween div{
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+
+.alignspacearound{
+    width:90%;
+    height: 270px;
+    border-radius:10px ;
+    background-color: purple;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.alignspacearound div{
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.gap{
+    background-image:linear-gradient(to bottom, #ff8aff, white);
+    }
+
+.gap10px{
+    display:flex;
+    width: 90%;
+    height:auto;
+    border-radius:10px;
+    background-color:purple;
+    gap:10px; 
+}
+
+.gap10px div{
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+
+
+.gap30px{
+    display:flex;
+    width: 90%;
+    height:auto;
+    border-radius:10px;
+    background-color:purple;
+    flex-wrap: wrap;
+    gap:30px; 
+}
+
+.gap30px div{
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    border-radius: 10px;
+}
+
+
+.gap10px30px{
+    display:flex;
+    width: 90%;
+    height:auto;
+    border-radius:10px;
+    background-color:purple;
+    flex-wrap: wrap;
+    row-gap:10px; 
+    column-gap:30px; 
+}
+
+.gap10px30px div{
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    border:1px solid black;
+    box-shadow: 1mm 1mm grey;
+    border-radius: 10px;
+}
+
