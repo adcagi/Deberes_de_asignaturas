@@ -60,7 +60,7 @@ html body{
 }
 
 .container_2{
-    background-color: lightblue;
+    width: 20%;
     height: 100vh;
 }
 div .flexdirection{
@@ -592,3 +592,268 @@ div .flexdirection{
     border-radius: 10px;
 }
 
+
+.order{
+    background-image:linear-gradient(to bottom, #ffcc8a, white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+
+.order .example1{
+    display:flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height:auto;
+    background-color: purple;
+    border-radius:10px;
+    margin: 10px;
+    
+}
+
+.example1 div{
+    width: 50px;
+    height: 50px;
+    background-color:orange;
+    border-radius:10px;
+    margin: 10px;
+    border:1px solid black;
+    box-shadow:1mm 1mm grey;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+}
+
+
+
+
+.example1 div:nth-child(1){
+order:2;
+}
+.example1 div:nth-child(2){
+    order:4;
+}
+.example1 div:nth-child(3){
+    order:1;
+}
+.example1 div:nth-child(4){
+    order:5;
+}.example1 div:nth-child(5){
+    order:3;
+}
+
+
+
+.order .example2{
+    display:flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height:auto;
+    background-color: purple;
+    border-radius:10px;
+    margin: 10px;
+    
+}
+
+.example2 div{
+    width: 50px;
+    height: 50px;
+    background-color:orange;
+    border-radius:10px;
+    margin: 10px;
+    border:1px solid black;
+    box-shadow:1mm 1mm grey;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+}
+
+
+.example2 div:nth-child(1){
+order:4;
+}
+.example2 div:nth-child(2){
+    order:2;
+}
+.example2 div:nth-child(3){
+    order:3;
+}
+.example2 div:nth-child(4){
+    order:1;
+}
+
+
+.order .example3{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 90%;
+    height:auto;
+    background-color: purple;
+    border-radius:10px;
+    margin: 10px;
+    justify-content: stretch;
+
+    
+}
+
+.example3 div{
+    height: 50px;
+    background-color:orange;
+    border-radius:10px;
+    margin: 10px;
+    border:1px solid black;
+    box-shadow:1mm 1mm grey;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+}
+
+
+.example3 div:nth-child(1){
+    order:3;
+}
+.example3 div:nth-child(2){
+    order:1;
+}
+.example3 div:nth-child(3){
+    order:2;
+}
+
+
+.grow{
+    background-image:linear-gradient(to bottom, #ffcc8a, white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    }
+
+.growequal{
+    display: flex;
+    width:90%;
+    height: auto;
+    background-color:purple;
+    border-radius:10px;
+    margin: 10px;
+}
+
+
+
+
+.growequal div{
+    height:50px;
+    background-color:orange;
+    border:1px solid black;
+    border-radius:10px;
+    box-shadow:1mm 1mm grey;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.growequal div:nth-child(1){
+flex-grow:1;
+
+}
+
+.growequal div:nth-child(2){
+flex-grow:1;
+
+}
+
+.growequal div:nth-child(3){
+   flex-grow:1;
+
+}
+
+
+.growproportion{
+    display: flex;
+    width:90%;
+    height: auto;
+    background-color:purple;
+    border-radius:10px;
+    margin: 10px;
+}
+
+
+.growproportion div{
+    height:50px;
+    background-color:orange;
+    border:1px solid black;
+    border-radius:10px;
+    box-shadow:1mm 1mm grey;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.growproportion div:nth-child(1){
+flex-grow:1;
+
+}
+
+.growproportion div:nth-child(2){
+flex-grow:2;
+
+}
+
+.growproportion div:nth-child(3){
+   flex-grow:1;
+
+}
+
+
+.alignself{
+    background-image:linear-gradient(to bottom, #ffcc8a, white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    }
+
+
+
+.alignselfstart{
+    display: flex;
+    width:90%;
+    height: 180px;
+    background-color:purple;
+    border-radius:10px;
+    margin: 10px;
+    align-items: flex-start;
+}
+
+
+.alignselfstart div{
+    width: 50px;
+    height:50px;
+    background-color:orange;
+    border:1px solid black;
+    border-radius:10px;
+    box-shadow:1mm 1mm grey;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.alignselfstart div:nth-child(3){
+   align-self: flex-end;
+
+}

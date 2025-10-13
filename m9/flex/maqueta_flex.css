@@ -1,0 +1,178 @@
+html body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 1mm;
+    border-bottom: 1px solid black;
+}
+
+
+
+.sections{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.sections div{
+    padding: 10px;
+    font-size: 7mm;
+
+}
+
+.sections div:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.assets{
+    display: flex;
+    justify-content:space-around;
+}
+
+.assets div{
+    margin: 3mm;
+    font-size: large;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20mm;
+
+}
+
+.assets div:hover{
+    background-color:grey;
+    cursor: pointer;
+}
+
+.title{
+    width: 100%;
+    height:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.maqueta{
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+    justify-self: center;
+}
+
+.maqueta div{
+    width: 100%;
+    height: 800px;
+}
+
+.style1{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.style1 div{
+    width: 100%;
+    height: 50mm;
+    border-radius: 10px;
+    background-color: grey;
+}
+
+
+
+.style2{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.style2 div{
+    width: 100%;
+    height: 60mm;
+    border-radius: 10px;
+    background-color: grey;
+}
+
+
+.style3{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.style3 div{
+    width: 100%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: grey;
+}
+
+
+.style4{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.style4 div{
+    width: 100%;
+    height: 60mm;
+    border-radius: 10px;
+    background-color: grey;
+}
+
+
+
+.style5{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+.style5 div{
+    width: 100%;
+    height: 50mm;
+    border-radius: 10px;
+    background-color: grey;
+}
+
+.footer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.shopnowbtn{
+    background-color: black;
+    border-radius: 50px;
+    width: 35mm;
+    height: auto;
+    color: white;
+    font-size: large;
+    text-align: center;
+
+}
