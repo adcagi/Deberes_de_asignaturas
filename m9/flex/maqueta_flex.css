@@ -75,6 +75,11 @@ html body{
     height: 800px;
 }
 
+.maqueta div div:hover{
+    border:1mm solid black;
+    cursor: pointer;
+}
+
 .style1{
     display: flex;
     flex-direction: column;
@@ -87,10 +92,19 @@ html body{
     width: 100%;
     height: 50mm;
     border-radius: 10px;
-    background-color: grey;
+    background-color: beige;
 }
+ .style1 div:nth-child(1) img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+ }
 
-
+  .style1 div:nth-child(2) img{
+    width: 100%; 
+    height: 100%; 
+    justify-self: center;
+ }
 
 .style2{
     display: flex;
@@ -104,9 +118,20 @@ html body{
     width: 100%;
     height: 60mm;
     border-radius: 10px;
-    background-color: grey;
+    background-color: rgb(21, 34, 51);
 }
 
+ .style2 div:nth-child(1) img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+ }
+
+  .style2 div:nth-child(2) img{
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain;
+ }
 
 .style3{
     display: flex;
@@ -120,8 +145,14 @@ html body{
     width: 100%;
     height: 90%;
     border-radius: 10px;
-    background-color: grey;
+    background-color: rgb(238, 1, 238);
 }
+
+ .style3 div:nth-child(1) img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
 
 
 .style4{
@@ -136,9 +167,22 @@ html body{
     width: 100%;
     height: 60mm;
     border-radius: 10px;
-    background-color: grey;
+    background-color: rgb(174, 221, 3);
 }
 
+
+ .style4 div:nth-child(1) img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+ }
+ 
+
+  .style4 div:nth-child(2) img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+ }
 
 
 .style5{
@@ -154,8 +198,22 @@ html body{
     width: 100%;
     height: 50mm;
     border-radius: 10px;
-    background-color: grey;
+    background-color: rgb(163, 163, 163);
 }
+
+ .style5 div:nth-child(1) img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+ }
+ 
+
+  .style5 div:nth-child(2) img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+ }
+
 
 .footer{
     width: 100%;
@@ -163,16 +221,30 @@ html body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 .shopnowbtn{
     background-color: black;
     border-radius: 50px;
     width: 35mm;
-    height: auto;
+    height: 50px;
     color: white;
     font-size: large;
-    text-align: center;
+    text-align: center; 
+    justify-self: center;
 
 }
+
+.shopnowbtn:hover{
+    cursor: pointer;
+    background-color: grey;
+}
+
+.footer img{
+    width:30px;
+    height:30px;
+}
+
