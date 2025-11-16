@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Piles i Cues</h1>
+    <div class="pila">
+        <h2>Pila</h2>
+        <button id="pushButton">Sube un elemento</button>
+        <button id="popButton">Quita un elemento</button>
+    </div>
+    <div class="cola">
+        <h2>Cola</h2>
+        <button id="queueButton">Cuela un elemento</button>
+        <button id="dequeueButton">Decuela un elemento</button>
+    </div>
+    <script>
+        const pila= [];
+        const cola = [];
+        const queueButton = document.getElementById('queueButton');
+        const dequeueButton = document.getElementById('dequeueButton');
+        const pushButton = document.getElementById('pushButton');
+        const popButton = document.getElementById('popButton');
+        pushButton.addEventListener("click", ()=>{
+            const element= prompt("introduce un numero para subir a la pila: ");
+            pila.push(element);
+        })
+
+        popButton.addEventListener("click", ()=>{
+            if(pila.length === 0){
+                alert("la pila esta vacia")
+            }else{
+                const removeElement = pila.pop();
+                alert("El elemento " + removeElement + " ha sido quitado de la lista");
+            }
+                
+        })
+
+        queueButton.addEventListener("click", ()=>{
+            const element = prompt("cuela un elemento: ");
+            cola.push(element);
+        })
+        dequeueButton.addEventListener("click", ()=>{
+            if(cola.length === 0){
+                alert("la cola esta vacia")
+            }else{
+                const removeElement = cola.shift();
+                alert("El primer elemento " + removeElement + " ha sido desencolado.")
+            }
+        })
+    </script>
+</body>
+</html>
