@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+        .green{
+            background-color: green;
+            width: 100px;
+            height: 100px;
+        }
+        .blue{
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+        }
+
+        .yellow{
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+        }
+
+        .highred{
+            background-color: rgb(255, 119, 119);
+            width: 100px;
+            height: 100px;
+        }
+        .highgreen{
+            background-color: rgb(119, 255, 119);
+            width: 100px;
+            height: 100px;
+        }
+
+        .highblue{
+            background-color: rgb(119, 119, 255);
+            width: 100px;
+            height: 100px;
+        }
+        .highyellow{
+            background-color: rgb(255, 255, 175);
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simon</h1>
+    <div>
+        <button id="play">Play</button>
+    </div>
+    <div>
+        Nivel: <span id="score">0</span>
+    </div>
+    <div>
+        <button id="red" class="red"></button>
+        <button id="green" class="green"></button>
+        <button id="yellow" class="yellow"></button>
+        <button id="blue" class="blue"></button>
+    </div>
+    <script>
+        const colors = ["red", "blue", "green", "yellow"]; 
+        let sequence = [];
+        let player = [];
+        let score = 0;
+
+        const playButton = document.getElementById('play');
+        const scoredisplay = document.getElementById('score');
+        const redButton = document.getElementById('red');
+        const blueButton = document.getElementById('blue');
+        const greenButton = document.getElementById('green');
+        const yellowButton = document.getElementById('yellow');
+
+        playButton.addEventListener("click", ()=>{
+             sequence = [];
+             player = [];
+             score = 0;
+             for (let i = 0; i < score + 1; i++){
+                addColorSequence();
+                
+             }
+             highlightSequence(sequence);
+
+   
+
+        })
+        playerClick();
+        function addColorSequence(){
+            const randColor= colors[Math.floor(Math.random() * colors.length)];
+            sequence.push(randColor);
+        }
+
+        function highlightSequence(sequence){
+            for (let i = 0; i < sequence.length; i++){
+                let element = document.getElementById(sequence[i]);
+                setTimeout(()=>{
+                    element.classList.add('high' + sequence[i]);
+                    setTimeout(()=>{
+                        element.classList.remove('high' + sequence[i]);
+                    }, 500)
+
+                }, 1000 * i)
+            }
+        }
+        function playerClick(){
+            redButton.addEventListener("click", ()=>{
+                player.push("red");
+                checkSequence();
+            })
+                    greenButton.addEventListener("click", ()=>{
+                player.push("green");
+                checkSequence();
+            })
+                    blueButton.addEventListener("click", ()=>{
+                player.push("blue");
+                checkSequence();
+            })
+                    yellowButton.addEventListener("click", ()=>{
+                player.push("yellow");
+                checkSequence();
+            })
+        }
+        function checkSequence(){
+            const lastIndex = player.length -1;
+            if(player[lastIndex] != sequence[lastIndex]){
+                alert("se acabó el juego! tu score: " + score);
+                sequence = [];
+                player = [];
+                score = 0;
+                scoredisplay.textContent = score;
+                return;
+            }
+            if (player.length === sequence.length){
+                score++;
+                scoredisplay.textContent = score;
+                player = [];
+                addColorSequence();
+                highlightSequence(sequence);
+            }
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen M06 UF1 23-24</title>
+    <link rel="stylesheet" href="index.css">
+    
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contingut">
+
+
+        <header class="banner">
+            <h1>Examen M06 UF1 22-23</h1>
+        </header>
+        <nav class="menu">
+            <ul>
+                <li><a href="#acl">Aclaracions</a></li>
+                <li><a href="#ex1">Exercici 1</a></li>
+                <li><a href="#ex2">Exercici 2</a></li>
+                <li><a href="#ex3">Exercici 3</a></li>
+                <li><a href="#ex4">Exercici 4</a></li>            
+            </ul>
+        </nav>
+        <main>
+            
+            <article id="acl">
+                <p>notes profe: Massa llarg per 3h
+                   els examens s'han de provar m'he deixat un parell de onclick i alguns errors de text
+
+                </p>
+                <header>
+                    <h2>Aclaracions i apunts</h2>
+                </header>
+                <h2>Aclaracions</h2>
+                <p>
+                    L'accés a internet està prohibit, abans de començar s'ha de tenir el cable de xarxa desconnectat o el
+                    wifi desactivat.
+                </p>
+                <p>
+                    Totes les funcions que demana crear en els diferents exercicis s'han de crear amb el nom exacte i
+                    acceptar el paràmetres que demana l'exercici.
+                </p>
+                <p>
+                    Només es pot fer servir el visual studio i un navegador, al navegador evitar tenir més d'una
+                    pestanya oberta.
+                </p>   
+                <p>
+                    Al visual studio només es pot tenir obert la carpeta de l'examen, no es pot mirar activitats
+                    anteriors ni tenir apunts oberts.
+                </p>
+            <h2>Apunts</h2>
+            <p>
+                Condicionals
+                <pre>
+                    <code>
+    //simple condition
+    if (hour < 18) {
+        greeting = "Good day";
+    } 
+    // else statement
+    if (hour < 18) {
+        greeting = "Good day";
+        } else {
+        greeting = "Good evening";
+        }
+    // elseif statement
+    if (time < 10) {
+        greeting = "Good morning";
+        } else if (time < 20) {
+        greeting = "Good day";
+        } else {
+        greeting = "Good evening";
+        }
+                    </code>
+                </pre>
+            </p>
+            <p>
+                Bucles
+                <pre>
+                    <code>
+    //for statement
+    for (let step = 0; step < 5; step++) {
+        // Se ejecuta 5 veces, con valores del paso 0 al 4.
+        console.log('Camina un paso hacia el este');
+        }
+    //while statement
+    let n = 0;
+    let x = 0;
+    while (n < 3) {
+        n++;
+        x += n;
+    }
+    //for in
+    for (let i in array) {
+        result += array[i] 
+    }
+    //for of
+    for (let i in array) {
+        result += i 
+    }
+                    </code>
+                </pre>
+            </p>
+<pre>
+    <p>Accés al DOM
+        Obtenir un element:
+        <code>
+            let element = document.getElementById('para');   
+        </code>
+        Modificar el seu contingut:
+        <code>
+            let element = document.getElementById('para');
+            element.innerHTML = "I have changed!";
+        </code>
+        Modificar la seva classe:
+        <code>
+            let element = document.getElementById('para');
+            element.className = "cssClass";
+        </code>
+    </p>
+    <p>
+        Obtenir un valor random
+        <code>
+            // Returns a random integer from 0 to 9:<br>
+            Math.floor(Math.random() * 10);
+        </code>
+
+    </p>
+</pre>  
+            </article>
+            <article id="ex1">
+                <header>
+                    <h2>Cerca per sota del màxim (2,5 punts)</h2>
+                    <p>
+                        Crea la funció find10PerCentHiger(array) que retornarà tots els valors que estiguin un 10% per sota del valor màxim del vector numèric que es passarà per pàrametre.
+                    </p>                    
+                    <strong class="important">
+                        No pots fer servir funcions predefinides de cerca pels array, has de fer bucles per trobar les paraules.<br>
+                    </strong>
+                    Exemple:
+                    <code>
+                        <pre>
+const vector = [42, 18, 96, 73, 54, 22, 87, 33, 66, 5, 90, 41, 78,  
+                12, 67, 92, 15, 48, 31, 61, 39, 74, 100, 53, 25];
+                        </pre>
+                       </code>
+                    </p>
+                    <p> Fes que al fer clic en cercar mostri el resultat retornat dins del div amb l'id 'resultatEx1'.</p>
+                    <button onclick="cercarEx1();">Cercar</button>
+                    <div id="resultatEx1"><span class="exemple">Resultat:[96,90,92,100]</span></div>
+                </header>
+            </article>
+            <article id="ex2">
+                <header>
+                    <h2>Encerta el color (2.5 punts)</h2>
+                </header>
+                <p>
+                    Crea un joc on en fer clic al botó de jugar l'ordinador escull un color (de 4 colors diferents) de manera aleatòria que el mostra al div <code>colorCPU</code>.<br>
+                    Després al div <code>colorUser</code> es va mostrant cada interval de 300ms un color de manera aleatòria.<br>
+                    El joc tracta de que l'usuari ha de fer clic al color que ha escollit l'ordinador. Fes que en fer clic al div <code>colorUser</code> 
+                    el joc s'aturi i mostri un alert on indiqui si ha guanyat o ha perdut.
+                </p>
+                <div class="resultatColors">
+                    <div id="colorCPU"></div>
+                </div>
+                <div class="resultatColors">
+                    <div id="colorUser" onclick="escollirColorEx2()"></div>
+                </div>
+                <button onclick="jugarEx2();">Jugar</button>
+            </article>
+            <article id="ex3">
+                <header>
+                    <h2>Cerca en la matriu (2.5 punts)</h2>
+                </header>
+                <p>
+                    1.- (1.5 punts) Crea la funció findElement(array, value) retornarà un array d'objectes (de la classe Position que tenen els atributs x i y) indican les posicions on s'ha trobat el valor passat per paràmetre dins de la matriu passada per paràmetre.
+                </p>
+                <p>
+                    2.- (1 punt) Millora la funció per acceptar un tercer paràmetre <code>findElement(array, value, neighbor)</code> i ha de trobar tots els elements que coincideix que tenen el valor i al seu voltant tenen el valor que indica al paràmetre <code>neighbor</code>.
+                </p>
+                Exemple:
+                <code>
+                    <pre>
+const matriz = [
+['A', 'X', 'G', 'T', 'M'],
+['P', 'L', 'K', 'E', 'W'],
+['R', 'C', 'M', 'H', 'Q'],
+['S', 'Z', 'O', 'D', 'B'],
+['Y', 'J', 'U', 'F', 'V']
+];
+                    </pre>
+                   </code>
+                </p>
+                <p> Fes que al fer clic en cercar mostri el resultat retornat dins del div amb l'id 'resultatEx1'.</p>
+                <button onclick="cercarEx3();">Cercar</button>
+                <div id="resultatEx3" class="resultat"><span class="exemple">Resultat:[{x: 4, y: 0}, {x: 2,y:2}]</span></div>
+            </article>
+            <article id="ex4">
+                <h2>Dades dinàmiques: Arbre (2,5 punts)</h2>
+                <p>
+                    1.- (1.5punts) Crea una estructura de dades amb el nom de <code>Node</code> que tingui l'atribut <code>value</code> i els mètodes addChild() i getChildren() que permeti crear un arbre de nodes on cada node pot contenir un valor i els seus fills.<br>
+                </p>
+                <p>
+                    Crea un constructor on podem passar per paràmetre el valor inicial que tindrà el node.
+                </p>
+                <p>
+                    El mètode addChild(value) ha de retornar un nou node amb el valor afegit i el node pare el tindrà emmagatzemat per després consultar-ho amb el mètode getChidren()
+                </p> 
+                <p>Genera el següent arbre.<br></p>  
+                    <img src="imgs/graf.png" height="100px"><br>
+                <p>
+                    2.- (1 punt) Crea un mètode <code>find(value)</code> a la classe <code>Node</code> que retorni el <code>Node</code> que té el valor pasat per paràmetre dins dels seus descendents.
+                </p>
+                <div id="resultatEx4">
+                </div>
+            </article>
+        </main>
+    </div>
+    <script src="main3.js"></script>
+</body>
+
+</html>

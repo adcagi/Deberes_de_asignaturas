@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #colorPicker{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            gap: 10px;
+        }
+        .red{
+            background-color: red;
+            width:50px;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 50px;
+        }
+        .green{
+            background-color: green;
+            width:50px;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 50px;
+        }
+        .blue{
+            background-color: blue;
+            width:50px;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 50px;
+        }
+        .yellow{
+            background-color: yellow;
+            width:50px;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 50px;
+        }
+        .slot{
+            width: 50px;
+            height:50px;
+            border:1px solid black;
+            border-radius:50px ;
+        }
+        .slotGroup{
+            display: flex;
+            flex-wrap: wrap;
+            gap:10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>MasterMind</h1>
+    <div>
+        <button id="play">play</button>
+    </div>
+    <div>
+        Nivel: <span id="score">0</span>
+    </div>
+    <div>
+        <div id="inento1" class="slotGroup">
+            <div id="1-1" class="slot"></div>
+            <div id="1-2" class="slot"></div>
+            <div id="1-3" class="slot"></div>
+            <div id="1-4" class="slot"></div>
+        </div>
+        <div id="inento2" class="slotGroup">
+            <div id="2-1" class="slot"></div>
+            <div id="2-2" class="slot"></div>
+            <div id="2-3" class="slot"></div>
+            <div id="2-4" class="slot"></div>
+        </div>
+        <div id="inento3" class="slotGroup">
+            <div id="3-1" class="slot"></div>
+            <div id="3-2" class="slot"></div>
+            <div id="3-3" class="slot"></div>
+            <div id="3-4" class="slot"></div>
+        </div>
+        <div id="inento4" class="slotGroup">
+            <div id="4-1" class="slot"></div>
+            <div id="4-2" class="slot"></div>
+            <div id="4-3" class="slot"></div>
+            <div id="4-4" class="slot"></div>
+        </div>
+        <div id="inento5" class="slotGroup">
+            <div id="5-1" class="slot"></div>
+            <div id="5-2" class="slot"></div>
+            <div id="5-3" class="slot"></div>
+            <div id="5-4" class="slot"></div>
+        </div>
+        <div id="inento6" class="slotGroup">
+            <div id="6-1" class="slot"></div>
+            <div id="6-2" class="slot"></div>
+            <div id="6-3" class="slot"></div>
+            <div id="6-4" class="slot"></div>
+        </div>
+        <div id="inento7" class="slotGroup">
+            <div id="7-1" class="slot"></div>
+            <div id="7-2" class="slot"></div>
+            <div id="7-3" class="slot"></div>
+            <div id="7-4" class="slot"></div>
+        </div>
+        <div id="inento8" class="slotGroup">
+            <div id="8-1" class="slot"></div>
+            <div id="8-2" class="slot"></div>
+            <div id="8-3" class="slot"></div>
+            <div id="8-4" class="slot"></div>
+        </div>
+        <div id="inento9" class="slotGroup">
+            <div id="9-1" class="slot"></div>
+            <div id="9-2" class="slot"></div>
+            <div id="9-3" class="slot"></div>
+            <div id="9-4" class="slot"></div>
+        </div>
+        <div id="inento10" class="slotGroup">
+            <div id="10-1" class="slot"></div>
+            <div id="10-2" class="slot"></div>
+            <div id="10-3" class="slot"></div>
+            <div id="10-4" class="slot"></div>
+        </div>
+        <div>
+            <button id="verify"> verificar </button>
+        </div>
+        <div id="colorPicker">
+            <div id="green" class="green"></div>
+            <div id="red" class="red"></div>
+            <div id="blue" class="blue"></div>
+            <div id="yellow" class="yellow"></div>
+        </div>
+    </div>
+    <script>
+        const colors = ["red", "green", "blue", "yellow"];
+        let secretCode = [];
+        function generateSecretCode(){
+            secretCode = [];
+            for(let i = 0; i < colors.length; i++){
+                const randColor = colors[Math.floor(Math.random() * colors.length)];
+                secretCode.push(randColor);
+            }
+            
+        }
+        let filaActual = 1;
+        let posicionActual = 1;
+        
+        const playButton = document.getElementById('play');
+        playButton.addEventListener("click", ()=>{
+            generateSecretCode();
+            filaActual = 1;
+            posicionActual = 1;
+            console.log(secretCode);
+        })
+        const  colorPicker = document.querySelectorAll("#colorPicker div");
+        for(color of colorPicker){
+            color.addEventListener("click", (e)=>{
+                   if(posicionActual <= 4){
+                    const slot = document.getElementById(filaActual + "-" + posicionActual);
+                    slot.style.backgroundColor = e.target.classList[0];
+                    posicionActual++;
+
+                }
+            })
+        }
+
+        const verify = document.getElementById('verify');
+        verify.addEventListener("click", ()=>{
+            
+        })
+    </script>
+</body>
+</html>
