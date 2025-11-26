@@ -8,13 +8,13 @@ let num : number = 2;
 console.log(str + num);
 
 
-let bigint: bigint  = 123456789012345678901234567890n;
+// let bigint: bigint  = 123456789012345678901234567890n;
 
-try{
-    console.log(bigint + num);
-}catch(e){
-    console.error("No se puede mezclar bigint con number");
-}
+// try{
+//     console.log(bigint + num);
+// }catch(e){
+//     console.error("No se puede mezclar bigint con number");
+// }
 
 
 let numeros :  number[] = [0, 2, 0, 4, 0];
@@ -127,19 +127,18 @@ attachColor(colors.red,
 
        //TODO
 
-       function orderArray<T>(array : T[]){
-            let aux = 0;
-            for (let i = 0; i < array.length -1 ; i++){
-                for(let j = 0; j < i -1 ; j++){
-                    if(array[i] > array[i+1]){
-                        aux = array[i];
-                        array[i] = array[i+1];
-                        array[i+1] = aux; 
+       function orderArray<T>(array : T[], compare: (a:T, b:T) => number): T[]{
+            let aux: T | undefined ;
+            for(let i = 0; i < array.length; i++){
+                for(let j = 0; j < array.length - 1; j++){
+                    if(compare(array[j]!, array[j+1]!) > 0){
+                        aux = array[j];
+                        (array as any[])[j] = array[j+1];
+                        if(aux) array[j+1] = aux;
                     }
-
                 }
             }
             return array;
-       }
+        }
 
-       console.log(orderArray([1,7,9,4,3,2,5,6,8]))
+console.log(orderArray([5,6,4,3,9,0]))

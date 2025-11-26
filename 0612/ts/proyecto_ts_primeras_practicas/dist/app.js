@@ -2,13 +2,12 @@
 let str = " hola";
 let num = 2;
 console.log(str + num);
-let bigint = 123456789012345678901234567890n;
-try {
-    console.log(bigint + num);
-}
-catch (e) {
-    console.error("No se puede mezclar bigint con number");
-}
+// let bigint: bigint  = 123456789012345678901234567890n;
+// try{
+//     console.log(bigint + num);
+// }catch(e){
+//     console.error("No se puede mezclar bigint con number");
+// }
 let numeros = [0, 2, 0, 4, 0];
 for (let n of numeros) {
     let exist = n > 0;
@@ -94,19 +93,20 @@ function retArray(value, param) {
 }
 console.log(retArray(3, [2, 4, 5, 3, 8]));
 //TODO
-function orderArray(array) {
-    let aux = 0;
-    for (let i = 0; i < array.length - 1; i++) {
-        for (let j = 0; j < i - 1; j++) {
-            if (array[i] > array[i + 1]) {
-                aux = array[i];
-                array[i] = array[i + 1];
-                array[i + 1] = aux;
+function orderArray(array, compare) {
+    let aux;
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length - 1; j++) {
+            if (compare(array[j], array[j + 1]) > 0) {
+                aux = array[j];
+                array[j] = array[j + 1];
+                if (aux)
+                    array[j + 1] = aux;
             }
         }
     }
     return array;
 }
-console.log(orderArray([1, 7, 9, 4, 3, 2, 5, 6, 8]));
+console.log(orderArray([5, 6, 4, 3, 9, 0]));
 export {};
 //# sourceMappingURL=app.js.map
