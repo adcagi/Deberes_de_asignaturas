@@ -141,4 +141,4 @@ attachColor(colors.red,
             return array;
         }
 
-console.log(orderArray([5,6,4,3,9,0]))
+console.log(orderArray([5,6,4,3,9,0]));
