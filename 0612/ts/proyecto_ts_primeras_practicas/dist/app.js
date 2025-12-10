@@ -93,12 +93,11 @@ function retArray(value, param) {
 }
 console.log(retArray(3, [2, 4, 5, 3, 8]));
 //TODO
-function orderArray(array, compare) {
-    let aux;
+function orderArray(array) {
     for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < array.length - 1; j++) {
-            if (compare(array[j], array[j + 1]) > 0) {
-                aux = array[j];
+        for (let j = 0; j < array.length - 1 - i; j++) {
+            if (array[j] > array[j + 1]) {
+                let aux = array[j];
                 array[j] = array[j + 1];
                 if (aux)
                     array[j + 1] = aux;
@@ -108,5 +107,81 @@ function orderArray(array, compare) {
     return array;
 }
 console.log(orderArray([5, 6, 4, 3, 9, 0]));
+function foo(p) {
+    p.length;
+    p.includes('a');
+    //    p.split(' ') -----> Error 
+}
+class A {
+    getValue() {
+        return 5;
+    }
+    toInteger() {
+        return 7;
+    }
+}
+class B {
+    getValue() {
+        return 5;
+    }
+    toString() {
+        return "5";
+    }
+}
+let a = new A();
+a.getValue();
+a.toInteger();
+let b = new B();
+b.getValue();
+b.toString();
+let c = new B(); //se ha de especificar el tipo que devolverá
+c.getValue(); //hereda los metodos de la clase especificada, pero puede tener las clases que quieras
+function foo2(c) {
+    c.getValue(); // solo hereda los metodos que tienen en conjunto las clases A y B
+}
+let u = {
+    userId: 1
+};
+let user1 = "pepe";
+console.log("Tu Alias es: " + user1);
+let userR1 = {
+    id: 1,
+    nom: "adri",
+    email: "adri@gmail.com"
+};
+let userR2 = {
+    id: 2,
+    nom: "pedro",
+    email: "pedro@gmail.com"
+};
+let userR3 = {
+    id: 3,
+    nom: "matilda",
+    email: "matilda@gmail.com"
+};
+let arr = [userR1, userR2, userR3];
+function data(user) {
+    return `ID:${user.id}, email:${user.email}, nom:${user.nom}`;
+}
+console.log("Los datos del usuario son: " + data(userR1));
+let forma1 = {
+    base: 3,
+    alcada: 4
+};
+let forma2 = {
+    radi: 5
+};
+function formes(forma) {
+    if ("base" in forma) {
+        let area = (forma.base * forma.alcada) / 2;
+        return area;
+    }
+    else if ("radi" in forma) {
+        let area = Math.PI * forma.radi ^ 2;
+        return area;
+    }
+}
+console.log(formes(forma1));
+console.log(formes(forma2));
 export {};
 //# sourceMappingURL=app.js.map
