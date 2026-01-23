@@ -1,67 +1,82 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     class conductor{
-        private name: string = '';
-        private birdthDate : Date;
-        private portaMoto : boolean;
+        private _name: string;
+        private _birdthDate : Date;
+        private _portaMoto : boolean;
     
         constructor (name: string, birdthDate: Date, portaMoto : boolean){
-           this.name = name;
-           this.birdthDate = birdthDate;
-           this.portaMoto =portaMoto; 
+           this._name = name;
+           this._birdthDate = birdthDate;
+           this._portaMoto =portaMoto; 
        }
     
-        get nom() : string{
-         return this.name;
+        get name() : string{
+         return this._name;
        }
     
-       get brdthDate() : Date{
-        return this.birdthDate;
+       get birdthDate() : Date{
+        return this._birdthDate;
        }
     
-       get portaLaMoto() : boolean{
-        return this.portaMoto;
+       get portaMoto() : boolean{
+        return this._portaMoto;
        }
     
-         set nom(name: string){
-           this.name  = name;
+         set name(name: string){
+           this._name  = name;
        }
     
-       set brdthDate(birdthDate: Date){
-          this.birdthDate = birdthDate;
+       set birdthDate(birdthDate: Date){
+        const today = new Date();
+        const age =  today.getFullYear() - birdthDate.getFullYear();
+        if (age < 18){
+            throw new Error ("El conductor debe ser mayor de edad");
+        }
+        
+        this._birdthDate = birdthDate;
        }
     
-       set portaLaMoto(portaMoto: boolean){
-        this.portaMoto = portaMoto;
+       set portaMoto(portaMoto: boolean){
+        this._portaMoto = portaMoto;
        }
        
-       public print(name: string, birdthDate : Date, portaLaMoto : boolean) : string{
-        if(portaLaMoto){
-             return `Nom: ${name}, Data de naixement: ${birdthDate}, Porta Moto: si`;
-        }else{
-            return `Nom: ${name}, Data de naixement: ${birdthDate}, Porta Moto: no`;
+       
+       public print(value?: string | Date | boolean){
+        let name = this._name;
+        let birdthDate = this.obtenerEdad(this.birdthDate);
+        let portaMoto = this._portaMoto;
+        if(typeof(value) == "string"){
+           name = value;
         }
-           
+        if( value instanceof Date){
+            birdthDate = this.obtenerEdad(value);
+        }
+
+        if(typeof(value) === "boolean"){
+            portaMoto = value; 
+        }
+
+        console.log(`Nombre: ${name}, Edad: ${birdthDate}, Porta Moto: ${portaMoto}`);
        }
 
-       public  ageRestriction(name: string, birdthDate : Date) {
-            const fechaActual = new Date();
-            const diferecniafechas = fechaActual.getTime() - birdthDate.getTime();
-            if(diferecniafechas < 18){
-                throw new Error("Eres menor de edad, no puedes conducir!!!");
-            }else{
-                return "Bienvenido " + name + "!!!";
-            }
+       private obtenerEdad(birthDate: Date): string {
+        const today = new Date();
+        const edad = today.getFullYear() - birthDate.getFullYear();
+        return `${edad}`;
+        
        }
+
+
     
     
     }
 
-    let conductor1 = new conductor("Alberto", new Date(2005, 5, 15), true);
-    let conductor2 = new conductor("Germilio", new Date(20013, 5, 15), false);
 
-    console.log(conductor1.print(conductor1.nom, conductor1.brdthDate, conductor1.portaLaMoto));
-    console.log(conductor2.print(conductor2.nom, conductor2.brdthDate, conductor2.portaLaMoto));
-    console.log(conductor1.ageRestriction(conductor1.nom, conductor1.brdthDate));
-    console.log(conductor2.ageRestriction(conductor2.nom, conductor2.brdthDate));
+
+    let conductor1 = new conductor("Juan Perez", new Date(1990, 5, 15), true);
+    conductor1.print();
+    conductor1.print("Carlos Lopez");
+    conductor1.print(new Date("2000-3-20"));
+    conductor1.print(false);
 });
