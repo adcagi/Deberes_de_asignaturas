@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my-typescript-app</title>
+    <link rel="stylesheet" href="index.css">
+    
+    
+    <script type="module" src="/src/app.ts"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Valida la contraseña</h1>
+      <textarea class="texto" id="texto" placeholder="escribe"></textarea>
+    </div>
+    <div class="numChars" id="numChars"><img src="images/wrong.png" alt="wrong" ><img src="images/correct.png" alt="wrong" style="display: none;">8 caràcters mínim</div>
+    <div class="number" id="number"><img src="images/wrong.png" alt="wrong"><img src="images/correct.png" alt="wrong" style="display: none;">1 numero mínim</div>
+    <div class="specialChar" id="specialChar"><img src="images/wrong.png" alt="wrong"><img src="images/correct.png" alt="wrong" style="display: none;">1 caràcter especial mínim</div>
+    <div class="upperCase" id="upperCase"><img src="images/wrong.png" alt="wrong"><img src="images/correct.png" alt="wrong" style="display: none;">1 majuscula mínim</div>
+  </body>
+</html>
