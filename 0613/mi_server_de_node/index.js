@@ -1,11 +1,19 @@
 const express = require('express');
 const app = express();
+const aplicacion = require('./app')
+const PORT = 3000;
+
+
 const users = [
   { id: 1, name: 'Urian Viera' },
   { id: 2, name: 'Brenda Viera' },
+  { id: 3, name: 'carlos marracho' },
+  { id: 4, name: 'luis Vacia' }
 ];
 
-const PORT = 3000;
+app.get('/contacte', (req, res) =>{
+  
+})
 
 app.use(express.json()); // Middleware para parsear JSON
 
@@ -15,6 +23,15 @@ res.send('¡Hola, Mundo!');
 
 app.get('/users', (req, res) => {
     res.json(users);
+});
+
+app.get('/users/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const user =  users.find(u => u.id === id);
+  if(!user){
+    return res.json(404).json({message: 'user no encontrado'})
+  }
+    res.json(user);
 });
 
 app.get('/test', (req, res) => {
@@ -45,4 +62,4 @@ if (userIndex >= 0) {
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+});     

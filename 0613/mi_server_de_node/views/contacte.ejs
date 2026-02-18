@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+    </head>
+    <body>
+
+        <h1>Contacto</h1>
+        <form action="/contacte" method="POST">
+            <input type="text" name="nom" id="nom" placeholder="nom" required>
+            <input type="text" name="cognom" id="cognom" placeholder="cognoms" required>
+            <input type="tel" name="telefon" id="telefon" placeholder="telefon" pattern="\d{9}" required>
+            <input type="text" name="descripcio" id="descripcio" placeholder="descripcio" maxlength="250" required>
+            <input type="submit"   name="submit" id="submit" value="enviar">
+        </form>
+        <a href="/">volver</a>
+    </body>
+</html>
