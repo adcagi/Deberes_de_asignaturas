@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use OpenApi\Annotations as OA;
+
 
 class EventController extends Controller
 {

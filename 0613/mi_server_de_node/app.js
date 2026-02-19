@@ -21,7 +21,7 @@ app.get('/contacte', (req, res) =>{
 
 
 app.post('/contacte', (req, res) =>{
-  const {telefon, nom, cognom, descipcio} = req.body;
+  const {telefon, nom, cognom, descripcio} = req.body;
   if(!/^\d{9}$/.test(telefon)){
     return res.send("El telefono debe tener 9 digitos")  
   }
@@ -29,13 +29,8 @@ app.post('/contacte', (req, res) =>{
     Nom = ${nom}<br>
     Cognom = ${cognom}<br>
     Telefon = ${telefon}<br>
-    Descripcio = ${descipcio}`
+    Descripcio = ${descripcio}`
   )
-  // res.send('formulario recibido' + JSON.stringify(req.body))  
-  // res.json({
-  //   message: 'formulario recibido',
-  //   form: req.body
-  // });
 });
 
 
