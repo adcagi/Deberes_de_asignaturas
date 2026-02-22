@@ -1,0 +1,24 @@
+
+
+.amarillo{
+  background-color: #FFFFCC;
+}
+.negro{
+  background-color: black;
+}
+
+.azul{
+  background-color: #CCE6FF;
+}
+
+.blanco{
+  background-color: white;
+}
+
+.oculto{
+  display: none;
+}
+
+.visible{
+  display: block;
+}

@@ -1,0 +1,38 @@
+body{
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.amarillo{
+  background-color: #FFFFCC;
+}
+.negro{
+  background-color: black;
+}
+
+.azul{
+  background-color: #CCE6FF;
+}
+
+.blanco{
+  background-color: white;
+}
+
+.oculto{
+  display: none;
+}
+
+.visible{
+  display: block;
+}
+
+#div{
+  width: 150px;
+  height: 20px;
+  border: 1px solid black;
+}
