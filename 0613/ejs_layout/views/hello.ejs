@@ -1,0 +1,20 @@
+<title>EJS Static Page</title>
+<h1><%= title %></h1>
+<p><%= description %></p>
+
+<% 
+switch(friends.length){
+  case 0: %>
+    <p>you have no friends</p>
+    <% break;
+  default: %>
+  <p>you have <%= friends.length %> friends</p>
+  <% break; 
+} %>
+
+
+<ul>
+<% friends.forEach(function(friend){  %>
+  <li><%= friend %></li>
+<% }); %>  
+</ul>
