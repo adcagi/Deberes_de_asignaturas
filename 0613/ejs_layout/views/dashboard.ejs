@@ -1,39 +1,94 @@
 <%- include("partials/header") %>
 
 <div class="container">
-
-  <h2>Insights de Posts</h2>
+  <h2>Dashboard de Actividad</h2>
 
   <div class="cards">
 
-
     <div class="card">
       <h3>Top 5 Contributors</h3>
-      <% if (topContributors && topContributors.length > 0) { %>
-        <ul>
-          <% topContributors.forEach(user => { %>
-            <li>User <%= user[0] %> → <%= user[1] %> posts</li>
-          <% }) %>
-        </ul>
+      <% if (topUsers && topUsers.length > 0) { %>
+        <canvas id="topContributorsChart"></canvas>
       <% } else { %>
-        <p>No hay datos. Sincroniza los posts primero.</p>
+        <p>No hay datos. Sincroniza primero.</p>
       <% } %>
     </div>
 
+    <div class="card">
+      <h3>Mediana de posts por usuario</h3>
+      <p class="big"><%= medianPostsPerUser ?? "Sin datos" %></p>
+    </div>
 
     <div class="card">
-    <h3>Mediana de posts por usuario</h3>
-    <p class="big"><%= medianPostsPerUser %></p>
+      <h3>Top 5 posts más comentados</h3>
+      <% if (topPostTitles && topPostTitles.length > 0) { %>
+        <canvas id="topPostsChart"></canvas>
+      <% } else { %>
+        <p>No hay comentarios disponibles.</p>
+      <% } %>
     </div>
 
   </div>
 
   <div class="buttons">
-    <a href="/sync/posts" class="button">Sincronizar datos</a>
-    <a href="/api/dashboard" class="button blue">Volver al Dashboard</a>
+    <a href="/sync/posts" class="button">Sincroniza los datos</a>
   </div>
-
 </div>
+
+
+<% if (topUsers && topUsers.length > 0) { %>
+<script>
+  const topUsers = <%- JSON.stringify(topUsers) %>;
+  const topCounts = <%- JSON.stringify(topCounts) %>;
+
+  const ctx1 = document.getElementById("topContributorsChart");
+  if (ctx1) {
+    new Chart(ctx1, {
+      type: "bar",
+      data: {
+        labels: topUsers,
+        datasets: [{
+          data: topCounts,
+          backgroundColor: "rgba(54, 162, 235, 0.7)",
+          borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  }
+</script>
+<% } %>
+
+<% if (topPostTitles && topPostTitles.length > 0) { %>
+<script>
+  const topPostTitles = <%- JSON.stringify(topPostTitles) %>;
+  const topPostCounts = <%- JSON.stringify(topPostCounts) %>;
+
+  const ctx2 = document.getElementById("topPostsChart");
+  if (ctx2) {
+    new Chart(ctx2, {
+      type: "bar",
+      data: {
+        labels: topPostTitles,
+        datasets: [{
+          data: topPostCounts,
+          backgroundColor: "rgba(255, 99, 132, 0.7)",
+          borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  }
+</script>
+<% } %>
 
 </body>
 </html>

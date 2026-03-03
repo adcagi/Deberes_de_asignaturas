@@ -1,13 +1,14 @@
 {
   "name": "dashboard",
   "version": "1.0.0",
+  "description": "Dashboard de análisis de posts",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
     "axios": "^1.6.0",
-    "better-sqlite3": "^8.5.0",
+    "better-sqlite3": "^9.0.0",
     "ejs": "^3.1.9",
     "express": "^4.18.2"
   }
