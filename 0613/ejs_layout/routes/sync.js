@@ -2,29 +2,38 @@ const express = require("express");
 const axios = require("axios");
 const router = express.Router();
 
-router.get("/products", async (req, res) => {
+router.get("/posts", async (req, res) => {
   try {
-    const response = await axios.get("https://fakestoreapi.com/products");
-    const products = response.data;
     const db = req.db;
 
-    const insert = db.prepare(`
-      INSERT OR REPLACE INTO products (id, title, price, category)
-      VALUES (?, ?, ?, ?)
+
+    const postsRes = await axios.get("https://jsonplaceholder.typicode.com/posts");
+    const commentsRes = await axios.get("https://jsonplaceholder.typicode.com/comments");
+
+    const posts = postsRes.data;
+    const comments = commentsRes.data;
+
+    const insertPost = db.prepare(`
+      INSERT OR REPLACE INTO posts (id, userId, title)
+      VALUES (?, ?, ?)
     `);
 
-    const transaction = db.transaction((products) => {
-      for (const product of products) {
-        insert.run(product.id, product.title, product.price, product.category);
-      }
+    const insertComment = db.prepare(`
+      INSERT OR REPLACE INTO comments (id, postId)
+      VALUES (?, ?)
+    `);
+
+    const transaction = db.transaction(() => {
+      posts.forEach(p => insertPost.run(p.id, p.userId, p.title));
+      comments.forEach(c => insertComment.run(c.id, c.postId));
     });
 
-    transaction(products);
+    transaction();
 
-    res.send("Productos sincronizados correctamente");
+    res.send("Posts y comentarios sincronizados correctamente");
   } catch (error) {
     console.error(error);
-    res.status(500).send("Error al sincronizar");
+    res.status(500).send("Error al sincronizar posts");
   }
 });
 

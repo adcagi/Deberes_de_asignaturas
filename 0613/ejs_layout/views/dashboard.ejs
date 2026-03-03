@@ -1,16 +1,39 @@
 <%- include("partials/header") %>
 
-<h2>Total Productos: <%= totalProducts %></h2>
-<h2>Valor Total: $<%= totalValue.toFixed(2) %></h2>
+<div class="container">
 
-<h3>Productos por Categoría:</h3>
-<ul>
-  <% for (let category in categories) { %>
-    <li><%= category %> → <%= categories[category] %></li>
-  <% } %>
-</ul>
+  <h2>Insights de Posts</h2>
 
-<a href="/sync/products">Sincronizar productos</a>
+  <div class="cards">
+
+
+    <div class="card">
+      <h3>Top 5 Contributors</h3>
+      <% if (topContributors && topContributors.length > 0) { %>
+        <ul>
+          <% topContributors.forEach(user => { %>
+            <li>User <%= user[0] %> → <%= user[1] %> posts</li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p>No hay datos. Sincroniza los posts primero.</p>
+      <% } %>
+    </div>
+
+
+    <div class="card">
+    <h3>Mediana de posts por usuario</h3>
+    <p class="big"><%= medianPostsPerUser %></p>
+    </div>
+
+  </div>
+
+  <div class="buttons">
+    <a href="/sync/posts" class="button">Sincronizar datos</a>
+    <a href="/api/dashboard" class="button blue">Volver al Dashboard</a>
+  </div>
+
+</div>
 
 </body>
 </html>
