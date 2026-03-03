@@ -4,7 +4,6 @@
   <h2>Dashboard de Actividad</h2>
 
   <div class="cards">
-
     <div class="card">
       <h3>Top 5 Contributors</h3>
       <% if (topUsers && topUsers.length > 0) { %>
@@ -28,13 +27,21 @@
       <% } %>
     </div>
 
+    <div class="card">
+      <h3>Posts por usuario</h3>
+      <% if (postsPerUser && postsPerUser.length > 0) { %>
+        <canvas id="postsPerUserChart"></canvas>
+      <% } else { %>
+        <p>No hay datos disponibles.</p>
+      <% } %>
+    </div>
+
   </div>
 
   <div class="buttons">
-    <a href="/sync/posts" class="button">Sincroniza los datos</a>
+    <a href="/sync/posts" class="button">Sincronizar</a>
   </div>
 </div>
-
 
 <% if (topUsers && topUsers.length > 0) { %>
 <script>
@@ -77,6 +84,32 @@
         datasets: [{
           data: topPostCounts,
           backgroundColor: "rgba(255, 99, 132, 0.7)",
+          borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  }
+</script>
+<% } %>
+
+<% if (postsPerUser && postsPerUser.length > 0) { %>
+<script>
+  const postsPerUser = <%- JSON.stringify(postsPerUser) %>;
+
+  const ctx3 = document.getElementById("postsPerUserChart");
+  if (ctx3) {
+    new Chart(ctx3, {
+      type: "bar",
+      data: {
+        labels: postsPerUser.map(p => `User ${p.userId}`),
+        datasets: [{
+          data: postsPerUser.map(p => p.count),
+          backgroundColor: "rgba(75, 192, 192, 0.7)",
           borderRadius: 6
         }]
       },
