@@ -1,4 +1,3 @@
-// main.tsx o main.jsx
 import 'bootstrap/dist/css/bootstrap.min.css';   
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -10,7 +9,7 @@ interface Producte {
   category_id?:number | null;
 }
 
-async function getProducts() {
+export async function getProducts() {
   const response = await fetch('/api/producte');
   const data = (await response.json()) as Producte[];
   let app = document.getElementById('app') as HTMLDivElement;
@@ -31,10 +30,11 @@ async function getProducts() {
               <td>${producte.product_name}</td>
               <td>${producte.supplier_id}</td>
               <td>${producte.category_id}</td>
-              <td><button type="button" class="btn btn-warning">
-                      <i class="bi bi-pencil"></i>Editar</button>
+              <td><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal2">
+                    <i class="bi bi-pencil"></i> Editar
+                  </button>
               </td>
-              <td><button type="button" class="btn btn-danger">
+              <td><button type="button" class="btn btn-danger borrar">
                       Borrar
                   </button>
               </td>
