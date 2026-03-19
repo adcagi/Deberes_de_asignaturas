@@ -1,33 +1,57 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Card from './card'
+import { CardBody } from './cardBody'
+import { CardHeader } from './cardHeader'
+import { CardFooter } from './cardFooter'
+import goldengoImg from './assets/goldengo.png'
+import Greeting from './greetings'
+import UserInfo from './userInfo'
+import Avatar from './avatarProps'
+import TaskList from './taskList'
 import './App.css'
+
+
+
+
+function Boton() {
+  return <button>Haz click</button>
+}
+
+
+
 
 function App() {
   const [count, setCount] = useState(0)
+  const tasks = [
+    { id: 1, title: "Estudiar React", completed: true },
+    { id: 2, title: "Aprobar React", completed: false }
+
+  ]
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center"
+      }}>
+
+        <Avatar src={goldengoImg} alt="user" size={100} />
+        <Greeting name="Adri" />
+        <UserInfo name="Adri" age={24} email="Adri@gmail.com" />
+        <TaskList tasks={tasks} />
+        <Card>
+          <CardHeader title="Producte" subtitle="Producte nou" />
+          <CardBody>
+            <p>Contingut del producte</p>
+          </CardBody>
+          <CardFooter>
+            <button>Comprar</button>
+          </CardFooter>
+        </Card>
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
