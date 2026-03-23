@@ -45,34 +45,34 @@ export async function getProducts() {
   app.innerHTML = aux;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const app = document.getElementById('app') as HTMLDivElement;
-  const btn = document.getElementById('send') as HTMLButtonElement;
+ document.addEventListener('DOMContentLoaded', () => {
+//   const app = document.getElementById('app') as HTMLDivElement;
+//   const btn = document.getElementById('send') as HTMLButtonElement;
 
-  btn.addEventListener('click', async () => {
-    let productChange: Producte = {
-      product_id: 2,
-      product_name: 'Sillón',
-      supplier_id: 1,
-      category_id: 1
-    };
+//   btn.addEventListener('click', async () => {
+//     let productChange: Producte = {
+//       product_id: 2,
+//       product_name: 'Sillón',
+//       supplier_id: 1,
+//       category_id: 1
+//     };
 
-    let response = await fetch(`/api/producte/${productChange.product_id}`, {
-      method: 'PUT',
-      headers: {
-        "Content-Type": 'application/json'
-      },
-      body: JSON.stringify(productChange)
-    });
+//     let response = await fetch(`/api/producte/${productChange.product_id}`, {
+//       method: 'PUT',
+//       headers: {
+//         "Content-Type": 'application/json'
+//       },
+//       body: JSON.stringify(productChange)
+//     });
 
-    if (response.ok) {
-      alert('Todo ha ido bien');
-      getProducts();
-    } else {
-      alert('Ha habido un error');
-    }
-  });
+//     if (response.ok) {
+//       alert('Todo ha ido bien');
+//       getProducts();
+//     } else {
+//       alert('Ha habido un error');
+//     }
+//   });
 
-  app.innerHTML = '<h1>Welcome to web</h1>';
-  getProducts(); 
-});
+//   app.innerHTML = '<h1>Welcome to web</h1>';
+   getProducts(); 
+ });
