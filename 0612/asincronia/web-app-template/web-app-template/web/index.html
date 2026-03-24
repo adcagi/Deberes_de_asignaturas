@@ -10,6 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script type="module" src="/src/main.ts"></script>
+  <script type="module" src="/src/functions/crearProducto.ts"></script>
   <script type="module" src="/src/functions/borrarProducto.ts"></script>
 
   <title>web</title>
@@ -31,9 +32,9 @@
 
         <div class="modal-body">
           <form action="" id="crear">
-            <input type="text" name="nombre" id="nombre" placeholder="sofá" required class="form-control mb-2">
-            <input type="number" name="proveedor" id="proveedor" placeholder="1" required class="form-control mb-2">
-            <input type="number" name="categoria" id="categoria" placeholder="1" required class="form-control mb-2">
+            <input type="text" name="nombre" id="nombre" placeholder="Mueble" required class="form-control mb-2">
+            <input type="number" name="proveedor" id="proveedor" placeholder="1-10" required class="form-control mb-2">
+            <input type="number" name="categoria" id="categoria" placeholder="1-10" required class="form-control mb-2">
             <div class="modal-footer">
               <button type="submit" class="btn btn-primary" id="send">Enviar</button>
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -59,9 +60,9 @@
 
         <div class="modal-body">
           <form action="">
-            <input type="text" placeholder="sofá" required class="form-control mb-2">
-            <input type="number" placeholder="1" required class="form-control mb-2">
-            <input type="number" placeholder="1" required class="form-control mb-2">
+            <input type="text" placeholder="Mueble" required class="form-control mb-2">
+            <input type="number" placeholder="1-10" required class="form-control mb-2">
+            <input type="number" placeholder="1-10" required class="form-control mb-2">
           </form>
         </div>
 
