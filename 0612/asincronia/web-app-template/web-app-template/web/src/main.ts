@@ -31,7 +31,7 @@ export async function getProducts() {
               <td>${producte.supplier_id}</td>
               <td>${producte.category_id}</td>
               <td><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal2">
-                    <i class="bi bi-pencil"></i> Editar
+                    <i class="bi bi-pencil editar"></i> Editar
                   </button>
               </td>
               <td><button type="button" class="btn btn-danger borrar">
@@ -46,33 +46,6 @@ export async function getProducts() {
 }
 
  document.addEventListener('DOMContentLoaded', () => {
-//   const app = document.getElementById('app') as HTMLDivElement;
-//   const btn = document.getElementById('send') as HTMLButtonElement;
 
-//   btn.addEventListener('click', async () => {
-//     let productChange: Producte = {
-//       product_id: 2,
-//       product_name: 'Sillón',
-//       supplier_id: 1,
-//       category_id: 1
-//     };
-
-//     let response = await fetch(`/api/producte/${productChange.product_id}`, {
-//       method: 'PUT',
-//       headers: {
-//         "Content-Type": 'application/json'
-//       },
-//       body: JSON.stringify(productChange)
-//     });
-
-//     if (response.ok) {
-//       alert('Todo ha ido bien');
-//       getProducts();
-//     } else {
-//       alert('Ha habido un error');
-//     }
-//   });
-
-//   app.innerHTML = '<h1>Welcome to web</h1>';
    getProducts(); 
  });
