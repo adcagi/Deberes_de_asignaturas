@@ -31,7 +31,7 @@ export async function getProducts() {
               <td>${producte.supplier_id}</td>
               <td>${producte.category_id}</td>
               <td><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal2">
-                    <i class="bi bi-pencil editar"></i> Editar
+                    <i class="bi bi-pencil editar"></i> 
                   </button>
               </td>
               <td><button type="button" class="btn btn-danger borrar">

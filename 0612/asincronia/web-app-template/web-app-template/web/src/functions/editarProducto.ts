@@ -2,11 +2,13 @@ import { getProducts } from "../main";
 
 document.addEventListener('DOMContentLoaded', () =>{
     const form = document.getElementById('editar') as HTMLFormElement;
+    const state = document.getElementById('editState') as HTMLElement;
 
 
 
     form.addEventListener('submit', async(e) =>{
         e.preventDefault();
+        state.innerText = 'esperando respuesta';
         const name =(document.getElementById('editName') as HTMLInputElement).value;
         const supplier = (document.getElementById('editSupplier') as HTMLInputElement).value;
         const category =(document.getElementById('editCategory')as HTMLInputElement).value;
@@ -30,7 +32,8 @@ document.addEventListener('DOMContentLoaded', () =>{
             });
 
             if(response.ok){
-                alert(`producto ${productId} editado`)
+                alert(`producto ${productId} editado`);
+                state.innerText = 'producto editado';
                 getProducts();
 
             }else{

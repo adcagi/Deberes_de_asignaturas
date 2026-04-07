@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     getProducts();
 
 
-    app.addEventListener('click', async(e) =>{
+    app.    addEventListener('click', async(e) =>{
         const modal  = document.getElementById('modal2') as HTMLDivElement;
         const target = e.target as HTMLElement;
         console.log(target)

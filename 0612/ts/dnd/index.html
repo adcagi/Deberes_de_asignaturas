@@ -1,28 +1,42 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my-typescript-app</title>
-    <link rel="stylesheet" href="index.css">
-    <script type="module" src="/src/app.ts"></script>
-         
-  </head>
-  <body>
-    <div id="columnas">
-      <div id="columna">
-        <span>To do</span>
-        <div id="tarjeta" draggable="true">Tarjeta</div>
-      </div>
-      <div id="columna">
-        <span>Doing</span>
-        <div id="tarjeta" draggable="true">Tarjeta</div>
-      </div>
-      <div id="columna">
-        <span>Done</span>
-        <div id="tarjeta" draggable="true">Tarjeta</div>
-      </div>
-    </div>
-  </body>
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Kanban Drag & Drop</title>
+  <link rel="stylesheet" href="src/style.css">
+  <script src="src/app.ts"></script>
+</head>
+<body>
+
+<h1>Tauler Kanban</h1>
+
+<div class="board">
+
+  <div class="column" data-column="todo">
+    <h2>Per fer</h2>
+
+    <div class="card" draggable="true">Tasca 1</div>
+    <div class="card" draggable="true">Tasca 2</div>
+
+  </div>
+
+  <div class="column" data-column="progress">
+    <h2>En progrés</h2>
+
+    <div class="card" draggable="true">Tasca 3</div>
+
+  </div>
+
+  <div class="column" data-column="done">
+    <h2>Fet</h2>
+
+    <div class="card" draggable="true">Tasca 4</div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
 </html>
